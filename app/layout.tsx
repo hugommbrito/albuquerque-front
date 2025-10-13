@@ -24,7 +24,7 @@ export default function RootLayout({
 		<html lang="pt-BR">
 			<body className={`antialiased ${inter.className}`}>
 				<header className=" absolute top-0 left-0 right-0 z-50">
-					<div className="mx-auto flex max-w-6xl items-center gap-10 px-6 py-4 text-sm font-medium text-primary">
+					<div className="w-full flex items-center gap-10 px-50 py-4 text-sm font-medium text-primary">
 						{/* TODO: TROCAR PELA LOGO ORIGINAL */}
 						<Link
 							href="/"
@@ -62,11 +62,10 @@ export default function RootLayout({
 						</div>
 					</div>
 				</header>
-				<main>{children}</main>
+				<main>{children}</main> {/* CONTEÚDO DA PÁGINA RENDERIZADO AQUI */}
 				<footer className="
           border-t border-primary
-          bg-primary text-primary-invert
-          absolute bottom-0 left-0 right-0 z-10" >
+          bg-primary text-primary-invert" >
 					<div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-10 text-sm">
 						<div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
 							<Link
