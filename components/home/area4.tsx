@@ -23,10 +23,10 @@ export default function HomeArea4() {
 					href="/nossas-obras"
 					text="Ver todos"
 					variant="outline"
-					backgroundColor='bg-primary-invert'
-					borderColor='border-primary-invert'
-					hoverBackgroundColor='hover:bg-primary-5'
-					hoverBorderColor='hover:border-primary-invert'
+					backgroundColor="bg-primary-invert"
+					borderColor="border-primary-invert"
+					hoverBackgroundColor="hover:bg-primary-5"
+					hoverBorderColor="hover:border-primary-invert"
 					className="text-16 h-12"
 				/>
 			</div>
@@ -37,18 +37,21 @@ export default function HomeArea4() {
 					subtitle="Seu sonho se tornou o nosso."
 					image="/home-page/mock/Rectangle 19.svg"
 					className="md:col-span-3"
+					href="/nossas-obras/parque-reseda"
 				/>
 				<Card
 					title="Colibris"
 					subtitle="Seu sonho se tornou o nosso."
 					image="/home-page/mock/Rectangle 20.svg"
 					className=""
+					href="/nossas-obras/parque-reseda"
 				/>
 				<Card
 					title="Jabuticaba"
 					subtitle="Seu sonho se tornou o nosso."
 					image="/home-page/mock/Rectangle 21.svg"
 					className=""
+					href="/nossas-obras/parque-reseda"
 				/>
 			</div>
 		</section>
