@@ -18,7 +18,7 @@ interface ButtonAbqProps {
 export default function ButtonLinkAbq({
 	href,
 	text,
-	icon = <span>&gt;</span>,
+	icon,
 	variant = 'outline',
 	fullWidth = false,
 	textColor,
@@ -30,8 +30,8 @@ export default function ButtonLinkAbq({
 	className = '',
 }: ButtonAbqProps) {
 	const baseClasses = fullWidth
-		? 'w-full flex items-center justify-center gap-2 rounded-full px-8 py-4 transition cursor-pointer'
-		: 'inline-flex items-center gap-2 rounded-full px-8 py-4 transition cursor-pointer';
+		? 'w-full flex items-center justify-center gap-2 rounded-full px-3 py-4 transition cursor-pointer'
+		: 'inline-flex items-center gap-2 rounded-full px-6 py-4 transition cursor-pointer';
 
 	// Presets baseados na imagem
 	const outlinePreset = {

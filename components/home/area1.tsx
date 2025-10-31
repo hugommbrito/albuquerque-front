@@ -4,7 +4,7 @@ export default function HomeArea1() {
 	return (
 		<div className="relative">
 			{/*//TODO: Adicionar gradiente com casal na frente*/}
-			<div className="absolute z-20 w-180 top-1/2 left-50 right-50 transform -translate-y-1/2">
+			<div className="absolute z-20 w-180 top-1/2 left-15 right-15 transform -translate-y-1/2">
 				<p className="font-inter font-500 text-48 text-primary">
 					Estamos por trás de cada sonho que se torna realidade
 				</p>
@@ -13,6 +13,7 @@ export default function HomeArea1() {
 					text="Realize seu sonho"
 					variant="filled"
 					className=""
+					icon={<img src="/icons/arrow-up-right-wt.svg" alt="" />}
 				/>
 			</div>
 			<img

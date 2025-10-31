@@ -2,8 +2,8 @@ import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
 
 export default function HomeArea2() {
 	return (
-		<section className="py-20">
-			<div className="mx-50  px-6 grid gap-10 md:grid-cols-[1.2fr_1fr] items-start">
+		<section className="py-40 px-15">
+			<div className=" px-6 grid gap-10 md:grid-cols-[1.2fr_1fr] items-start">
 				<div className="space-y-6">
 					<p className="text-12 uppercase tracking-wide text-primary-3">
 						20 anos de experiência em gestão &amp; construção

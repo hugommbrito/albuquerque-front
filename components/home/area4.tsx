@@ -3,7 +3,7 @@ import Card from '../zGeneral/Card';
 
 export default function HomeArea4() {
 	return (
-		<section className="py-20 px-50">
+		<section className="py-20 px-15">
 			<h2 className="text-48 font-400 text-center">
 				A natureza arquiteta as melhores soluções.
 			</h2>
@@ -36,8 +36,10 @@ export default function HomeArea4() {
 					title="Parque Resedá"
 					subtitle="Seu sonho se tornou o nosso."
 					image="/home-page/mock/Rectangle 19.svg"
-					className="md:col-span-3"
+					className=""
 					href="/nossas-obras/parque-reseda"
+					width="full"
+					
 				/>
 				<Card
 					title="Colibris"
@@ -45,6 +47,7 @@ export default function HomeArea4() {
 					image="/home-page/mock/Rectangle 20.svg"
 					className=""
 					href="/nossas-obras/parque-reseda"
+					width="single"
 				/>
 				<Card
 					title="Jabuticaba"
@@ -52,6 +55,7 @@ export default function HomeArea4() {
 					image="/home-page/mock/Rectangle 21.svg"
 					className=""
 					href="/nossas-obras/parque-reseda"
+					width="single"
 				/>
 			</div>
 		</section>

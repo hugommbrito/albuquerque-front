@@ -13,6 +13,10 @@ const inter = Inter({
 export const metadata: Metadata = {
 	title: 'Albuquerque',
 	description: 'Albuquerque - Realizando sonhos',
+	icons: {
+		icon: '/visual-id/logo-tipo-wt.svg',
+		apple: '/visual-id/logo-tipo-wt.svg',
+	},
 };
 
 export default function RootLayout({
@@ -23,17 +27,18 @@ export default function RootLayout({
 	return (
 		<html lang="pt-BR">
 			<body className={`antialiased ${inter.className}`}>
-				<header className=" absolute top-0 left-0 right-0 z-50">
-					<div className="w-full flex items-center gap-10 px-50 py-4 text-sm font-medium text-primary">
-						{/* TODO: TROCAR PELA LOGO ORIGINAL */}
+				{/* TODO: REMOVER FUNDO DO HEADER E APLICAR LÓGICA DE CLARO/ESCURO */}
+				<header className=" absolute top-0 left-0 right-0 z-50 bg-[#f8f9f7]">
+					<div className="w-full flex items-center gap-10 px-15 py-4 text-sm font-medium text-primary">
 						<Link
 							href="/"
 							className="flex items-center gap-2 text-base font-semibold lowercase tracking-tight "
 						>
-							<span className="relative flex h-8 w-8 items-center justify-center rounded-full border border-primary ">
-								<span className="block h-3 w-3 rounded-full bg-primary" />
-							</span>
-							<span>albuquerque</span>
+							<img
+								src="/visual-id/logo-hrz3-bk.svg"
+								alt="Albuquerque logo"
+								className="h-8"
+							/>
 						</Link>
 
 						<nav className="flex flex-1 items-center justify-center gap-6">
@@ -63,9 +68,11 @@ export default function RootLayout({
 					</div>
 				</header>
 				<main>{children}</main> {/* CONTEÚDO DA PÁGINA RENDERIZADO AQUI */}
-				<footer className="
+				<footer
+					className="
           border-t border-primary
-          bg-primary text-primary-invert" >
+          bg-primary text-primary-invert"
+				>
 					<div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-10 text-sm">
 						<div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
 							<Link
