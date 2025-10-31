@@ -70,97 +70,105 @@ export default function RootLayout({
 				<main>{children}</main> {/* CONTEÚDO DA PÁGINA RENDERIZADO AQUI */}
 				<footer
 					className="
-          border-t border-primary
-          bg-primary text-primary-invert"
+          bg-primary text-primary-invert
+					px-15 pt-30 pb-12
+					"
 				>
-					<div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-10 text-sm">
-						<div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
-							<Link
-								href="/"
-								className="flex items-center gap-2 text-base font-semibold lowercase tracking-tight "
-							>
-								<span className="relative flex h-8 w-8 items-center justify-center rounded-full border border-primary-invert">
-									<span className="block h-3 w-3 rounded-full bg-primary-invert" />
-								</span>
-								<span>albuquerque</span>
-							</Link>
-							<div className="flex flex-wrap items-center gap-6 text-xs uppercase tracking-wide text-primary-invert">
-								<span>Realizando sonhos desde 1982</span>
-								<span className="hidden h-1 w-1 rounded-full bg-primary-invert sm:block" />
-								<span>Construtora &amp; Incorporadora</span>
-							</div>
+					<div className="mb-45 grid grid-cols-3">
+						<div>
+							<img
+								src="/visual-id/logo-vert-wt.svg"
+								alt="Albuquerque logo"
+								className="h-65"
+							/>
 						</div>
-
-						<div className="grid gap-8 text-sm sm:grid-cols-3">
-							<div className="space-y-3">
-								<h2 className="text-xs font-semibold uppercase tracking-wide text-primary-invert">
-									Contato
-								</h2>
-								<p className="text-primary-invert">
-									contato@albuquerque.com.br
-								</p>
-								<p className="text-primary-invert">+55 (11) 4002-8922</p>
-							</div>
-							<div className="space-y-3">
-								<h2 className="text-xs font-semibold uppercase tracking-wide text-primary-invert">
-									Visite
-								</h2>
-								<p className="text-primary-invert">
-									Avenida dos Sonhos, 1234
-									<br />
-									São Paulo - SP
-								</p>
-							</div>
-							<div className="space-y-3">
-								<h2 className="text-xs font-semibold uppercase tracking-wide text-primary-invert">
-									Explore
-								</h2>
-								<div className="flex flex-wrap gap-4 text-primary-invert">
-									<Link
-										href="/nossas-obras"
-										className="transition hover:text-primary"
-									>
-										Nossas obras
-									</Link>
-									<Link
-										href="/nossa-historia"
-										className="transition hover:text-primary"
-									>
-										Nossa história
-									</Link>
-									<Link
-										href="/seu-sonho"
-										className="transition hover:text-primary"
-									>
-										Seu sonho
-									</Link>
-									<Link href="/blog" className="transition hover:text-primary">
-										Blog
-									</Link>
-								</div>
-							</div>
-						</div>
-
-						<div className="flex flex-col gap-4 border-t border-primary-invert pt-6 text-xs text-primary-invert sm:flex-row sm:items-center sm:justify-between">
-							<p>
-								&copy; 2025 Construtora Albuquerque. Todos os direitos
-								reservados.
+						<div className="flex flex-col gap-8">
+							<p className="font-800 text-primary-invert/80">
+								Escritório Comercial
 							</p>
-							<div className="flex flex-wrap items-center gap-4">
+							<p className="font-400 text-primary-invert/80">
+								Rua Sarg. Nicolau Dias de Farias <br />
+								567 - Sala 201, Miramar- João Pessoa/PB
+							</p>
+							<p className="font-800 text-primary-invert/80">Siga-nos</p>
+							<div className="flex items-center gap-10">
 								<Link
-									href="/politica-de-privacidade"
+									href="https://www.facebook.com/albuquerque"
 									className="transition hover:text-primary"
 								>
-									Política de privacidade
+									<img src="/icons/fb.svg" alt="Facebook" />
 								</Link>
 								<Link
-									href="/termos-de-uso"
+									href="https://www.instagram.com/albuquerque"
 									className="transition hover:text-primary"
 								>
-									Termos de uso
+									<img src="/icons/ig.svg" alt="Instagram" />
+								</Link>
+								<Link
+									href="https://www.linkedin.com/company/albuquerque"
+									className="transition hover:text-primary"
+								>
+									<img src="/icons/yt.svg" alt="YouTube" />
 								</Link>
 							</div>
 						</div>
+						<div className="flex flex-col gap-8">
+							<p className="font-800 text-primary-invert/80">
+								Central de relacionamento
+							</p>
+
+							<div className="flex gap-5 items-center">
+								<img src="/icons/wa.svg" alt="WhatsApp" className='h-6 '  color=''/>
+								<p className="text-32 font-400 text-primary-invert/80">83 3019-0895</p>
+								<img src="/icons/arrow-up-right-wt.svg" alt="Facebook" className='h-6'/>
+							</div>
+							<p className="font-800 text-primary-invert/80">
+								Central de vendas
+							</p>
+
+							<div className="flex gap-5 items-center">
+								<img src="/icons/wa.svg" alt="WhatsApp" className='h-6 '  color=''/>
+								<p className="text-32 font-400 text-primary-invert/80">83 3019-0800</p>
+								<img src="/icons/arrow-up-right-wt.svg" alt="Facebook" className='h-6'/>
+							</div>
+						</div>
+					</div>
+					<div className="flex flex-col gap-4 border-t-[1px] border-primary-4 pt-6 text-xs text-primary-invert sm:flex-row sm:items-center sm:justify-between">
+						<div className="flex flex-wrap items-center gap-4">
+							<Link
+								href="/Home"
+								className="transition hover:text-primary-3"
+								>
+									Home
+							</Link>
+							<Link
+								href="/nossas-obras"
+								className="transition hover:text-primary-3"
+								>
+								Nossas Obras
+							</Link>
+							<Link
+								href="/nossa-historia"
+								className="transition hover:text-primary-3"
+								>
+								Nossa História
+							</Link>
+							<Link
+								href="/seu-sonho"
+								className="transition hover:text-primary-3"
+								>
+								Financie
+							</Link>
+							<Link
+								href="/blog"
+								className="transition hover:text-primary-3"
+								>
+								Blog
+							</Link>
+						</div>
+								<p>
+									© 2025 • Todos direitos reservados
+								</p>
 					</div>
 				</footer>
 			</body>
