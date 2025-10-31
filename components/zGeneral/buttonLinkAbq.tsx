@@ -31,7 +31,7 @@ export default function ButtonLinkAbq({
 }: ButtonAbqProps) {
 	const baseClasses = fullWidth
 		? 'w-full flex items-center justify-center gap-2 rounded-full px-3 py-4 transition cursor-pointer'
-		: 'inline-flex items-center gap-2 rounded-full px-6 py-4 transition cursor-pointer';
+		: 'inline-flex self-start items-center gap-2 rounded-full px-6 py-4 transition cursor-pointer';
 
 	// Presets baseados na imagem
 	const outlinePreset = {
