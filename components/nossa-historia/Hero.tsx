@@ -11,7 +11,7 @@ export default function NossaHistoriaHero() {
 				</span>
 			</div>
 			<img
-				src="/nossa-historia/backDrop1.svg"
+				src="/nossa-historia/backDrop1.png"
 				alt="Família feliz em casa"
 				className="absolute inset-0 -z-10 w-full h-full object-cover"
 			/>
