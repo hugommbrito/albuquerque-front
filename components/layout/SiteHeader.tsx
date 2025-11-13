@@ -14,6 +14,7 @@ type VariantStyles = {
 	corretorButton: string;
 	clienteButton: string;
 	logoSrc: string;
+	gradientBackground: string;
 };
 
 const NAV_LINKS = [
@@ -37,6 +38,7 @@ const VARIANT_STYLES: Record<HeaderVariant, VariantStyles> = {
 		clienteButton:
 			'flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-white transition hover:bg-primary-2',
 		logoSrc: '/visual-id/logo-hrz3-bk.svg',
+		gradientBackground: '',
 	},
 	dark: {
 		header: 'bg-transparent',
@@ -48,6 +50,7 @@ const VARIANT_STYLES: Record<HeaderVariant, VariantStyles> = {
 		clienteButton:
 			'flex items-center gap-2 rounded-full bg-white px-4 py-2 text-primary transition hover:bg-white/90',
 		logoSrc: '/visual-id/logo-hrz3-wt.svg',
+		gradientBackground: 'bg-gradient-to-b from-primary via-primary/80 to-transparent',
 	},
 };
 
@@ -68,6 +71,7 @@ export default function SiteHeader() {
 
 	return (
 		<header className={`absolute top-0 left-0 right-0 z-50 ${styles.header}`}>
+			<div className={`absolute inset-0 -z-10 ${styles.gradientBackground}`} />
 			<div
 				className={`w-full flex items-center gap-10 px-15 py-4 text-sm font-medium ${styles.containerText}`}
 			>
