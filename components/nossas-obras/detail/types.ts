@@ -1,11 +1,20 @@
+import { Icon } from "@phosphor-icons/react";
+import { ReactElement } from "react";
+
+export type ProjectHeroHighlights = {
+	label: string;
+	info: string;
+};
+
 export type ProjectBreadcrumb = {
 	label: string;
 	href: string;
 };
 
 export type ProjectAmenity = {
-	label: string;
+	label: ReactElement<Icon>;
 	value: string;
+  span: number;
 };
 
 export type ProjectInfo = {
@@ -13,22 +22,38 @@ export type ProjectInfo = {
 	name: string;
 	subtitle: string;
 	heroImage: string;
+  heroHighlights: ProjectHeroHighlights[];
 	breadcrumb: ProjectBreadcrumb[];
 	location: string;
 	status: string;
+  lastUnits: boolean;
 	deliveryYear: string;
-	typologies: string[];
 	amenities: ProjectAmenity[];
-};
+  floorPlans: ProjectFloorPlan[];
+  areas: string[];
+  ytVideoId: string | null;
+  galeries: {
+    highlighted: ProjectGalleryData[];
+    units: SpecificGallery[];
+    areas: SpecificGallery[];
+}};
 
 export type ProjectGalleryData = {
-	highlight: string;
-	secondary: string[];
+	is_highlight: boolean;
+	url: string;
+  unit?: string;
+  area?: string;
 };
+
+export type SpecificGallery = {
+  id: string
+  name: string
+  images: ProjectGalleryData[]
+}
 
 export type ProjectFloorPlan = {
 	id: string;
-	label: string;
-	description: string[];
-	image: string;
+	name: string;
+	descriptionList: string[];
+  images: ProjectGalleryData[]
 };

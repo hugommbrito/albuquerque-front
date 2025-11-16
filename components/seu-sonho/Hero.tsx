@@ -1,3 +1,6 @@
+'use client'
+
+import { CaretRightIcon } from '@phosphor-icons/react';
 import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
 
 export default function SeuSonhoHero() {
@@ -22,7 +25,7 @@ export default function SeuSonhoHero() {
 						href="/contato"
 						text="Iniciar simulação"
 						variant="filled"
-						icon={<img src='/icons/chevron-right.svg' alt="Seta para a direita" />}
+						icon={<CaretRightIcon />}
             backgroundColor='bg-primary-invert border-primary-invert'
             textColor='text-primary'
 						fullWidth

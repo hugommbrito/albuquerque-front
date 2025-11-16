@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ProjectFloorPlan } from './types';
 
 type ProjectFloorPlansProps = {
@@ -7,70 +8,65 @@ type ProjectFloorPlansProps = {
 export default function ProjectFloorPlans({ plans }: ProjectFloorPlansProps) {
 	const primaryPlan = plans[0];
 
+	const [selectedFloorPlan, setSelectedFloorPlan] = useState(plans[0]);
+	const [selectedPlanImage, setSelectedPlanImage] = useState(
+		selectedFloorPlan.images[0].url
+	);
+
 	return (
-		<section className="py-20 bg-primary-5">
-			<div className="mx-auto max-w-6xl px-6 space-y-8">
-				<div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-					<h3 className="text-24 md:text-32 font-500 text-primary">
-						Plantas humanizadas para todos os perfis
-					</h3>
-					<div className="flex gap-3">
-						{plans.map((plan, index) => (
-							<button
-								key={plan.id}
-								type="button"
-								className={`rounded-full border px-5 py-2 text-12 transition ${
-									index === 0
-										? 'border-primary bg-primary text-primary-invert'
-										: 'border-primary/40 text-primary hover:border-primary'
-								}`}
+		<section className="py-20 px-15 bg-primary-invert">
+			<div className="flex gap-4 items-center bg-primary-5 p-4 rounded-full ">
+				{plans.map((plan, index) => (
+					<button
+						key={plan.id}
+						type="button"
+						onClick={() => (setSelectedFloorPlan(plan), setSelectedPlanImage(plan.images[0].url))}
+						className={`rounded-full border px-5 py-2 text-12 transition ${
+							plan.id === selectedFloorPlan.id
+								? 'border-primary bg-primary text-primary-invert'
+								: 'border-primary/40 text-primary hover:border-primary'
+						}`}
+					>
+						{plan.name}
+					</button>
+				))}
+			</div>
+
+			<div className="grid gap-6 grid-cols-3">
+				<div className="overflow-hidden py-8">
+					{selectedFloorPlan.descriptionList.map((item, index) => (
+						<p key={index} className="text-24 text-primary mx-10 mb-6">
+							• {item}
+						</p>
+					))}
+				</div>
+				<div className="max-h-150 col-span-2 py-8 flex justify-between">
+					<div className="w-9/10  rounded-3xl bg-primary-5 p-6 mr-7">
+						<img
+							src={selectedPlanImage}
+							alt={`Planta do tipo ${selectedFloorPlan.name}`}
+							className="h-full w-full object-contain rounded-2xl"
+						/>
+					</div>
+
+					<div className="w-1/10 grid grid-rows-6 gap-3">
+						{selectedFloorPlan.images.map((image, index) => (
+							<div
+								key={index}
+								className="rounded-2xl overflow-hidden border border-primary/10 hover:transform hover:scale-125 cursor-pointer transition"
+								onClick={() => setSelectedPlanImage(image.url)}
 							>
-								{plan.label}
-							</button>
+								<img
+										src={image.url}
+										alt={`Miniatura da imagem ${index}`}
+										className="h-full w-full object-cover"
+									/>
+							</div>
 						))}
 					</div>
 				</div>
-
-				<div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-					<div className="rounded-[32px] overflow-hidden bg-white p-4">
-						{primaryPlan && (
-							<img
-								src={primaryPlan.image}
-								alt="Planta humanizada"
-								className="w-full object-contain"
-							/>
-						)}
-					</div>
-					<div className="space-y-6">
-						{primaryPlan && (
-							<div className="rounded-3xl bg-white p-6">
-								<h4 className="text-18 font-500 text-primary mb-4">
-									Destaques do apartamento
-								</h4>
-								<ul className="space-y-2 text-14 text-primary-3">
-									{primaryPlan.description.map((item) => (
-										<li key={item}>• {item}</li>
-									))}
-								</ul>
-							</div>
-						)}
-						<div className="grid grid-cols-4 gap-3">
-							{plans.map((plan) => (
-								<div
-									key={plan.id}
-									className="rounded-2xl overflow-hidden border border-primary/10"
-								>
-									<img
-										src={plan.image}
-										alt={`Miniatura planta ${plan.label}`}
-										className="h-full w-full object-cover"
-									/>
-								</div>
-							))}
-						</div>
-					</div>
-				</div>
 			</div>
+
 		</section>
 	);
 }

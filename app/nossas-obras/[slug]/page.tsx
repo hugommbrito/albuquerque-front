@@ -1,3 +1,6 @@
+'use client';
+
+import HomeArea6 from '@/components/home/area6';
 import ProjectAmenitiesCta from '@/components/nossas-obras/detail/ProjectAmenitiesCta';
 import ProjectContactForm from '@/components/nossas-obras/detail/ProjectContactForm';
 import ProjectFinancing from '@/components/nossas-obras/detail/ProjectFinancing';
@@ -10,68 +13,348 @@ import {
 	ProjectGalleryData,
 	ProjectInfo,
 } from '@/components/nossas-obras/detail/types';
+import SeuSonhoFinancingCta from '@/components/seu-sonho/FinancingCta';
+import { CarIcon, OvenIcon, SwimmingPoolIcon } from '@phosphor-icons/react';
 
 const project: ProjectInfo = {
 	slug: 'parque-reseda',
 	name: 'Parque Resedá',
 	subtitle: 'Seu sonho se tornou o nosso.',
 	heroImage: '/home-page/mock/Rectangle 19.svg',
+	heroHighlights: [
+		{ label: 'Localização', info: 'Miramar' },
+		{ label: 'Quartos', info: '3-4' },
+		{ label: 'Entrega', info: '2025' },
+	],
 	breadcrumb: [
 		{ label: 'Empreendimentos', href: '/nossas-obras' },
 		{ label: 'Parque Resedá', href: '#' },
 	],
 	location: 'Miramar',
 	status: 'Em construção',
+	lastUnits: true,
 	deliveryYear: '2025',
-	typologies: ['1 quarto', '2 quartos', 'Coberturas garden'],
 	amenities: [
-		{ label: 'Localização', value: 'Miramar' },
-		{ label: 'Em construção', value: 'Status' },
-		{ label: '28', value: 'Unidades' },
-		{ label: 'Piscina', value: 'Lazer' },
-		{ label: '3 vagas', value: 'Vagas de garagem' },
+		{ label: <SwimmingPoolIcon size={35} />, value: 'Piscina', span: 1 },
+		{ label: <OvenIcon size={35} />, value: 'Área Gourmet', span: 1 },
+		{ label: <CarIcon size={35} />, value: '3 Vagas de garagem', span: 2 },
 	],
+	floorPlans: [
+		{
+			id: 'apt-1',
+			name: 'Apt 1 Quarto',
+			descriptionList: [
+				'Área - 67m²',
+				'1 Suíte Master',
+				'Sala de estar + jantar',
+				'Cozinha americana',
+				'1 vaga de garagem',
+			],
+			images: [
+				{
+					is_highlight: false,
+					url: '/nossas-obras/mock/resedaPlanta-2.png',
+					unit: 'Apt 1 Quarto',
+				},
+				{
+					is_highlight: false,
+					url: '/nossas-obras/mock/resedaInterno-1.png',
+					unit: 'Apt 1 Quarto',
+				},
+				{
+					is_highlight: false,
+					url: '/nossas-obras/mock/resedaInterno-2.png',
+					unit: 'Apt 1 Quarto',
+				},
+				{
+					is_highlight: false,
+					url: '/nossas-obras/mock/resedaInterno-3.png',
+					unit: 'Apt 1 Quarto',
+				},
+				{
+					is_highlight: false,
+					url: '/nossas-obras/mock/resedaInterno-4.png',
+					unit: 'Apt 1 Quarto',
+				},
+				{
+					is_highlight: false,
+					url: '/nossas-obras/mock/resedaInterno-5.png',
+					unit: 'Apt 1 Quarto',
+				},
+			],
+		},
+		{
+			id: 'apt-2',
+			name: 'Apt 2 Quartos',
+			descriptionList: [
+				'Área - 91m²',
+				'2 Suítes',
+				'Varanda gourmet',
+				'Living integrado',
+				'2 vagas de garagem',
+			],
+			images: [
+				{
+					is_highlight: false,
+					url: '/nossas-obras/mock/resedaPlanta-1.png',
+					unit: 'Apt 2 Quartos',
+				},
+				{
+					is_highlight: false,
+					url: '/nossas-obras/mock/resedaInterno-1 copy.png',
+					unit: 'Apt 2 Quartos',
+				},
+				{
+					is_highlight: false,
+					url: '/nossas-obras/mock/resedaInterno-2 copy.png',
+					unit: 'Apt 2 Quartos',
+				},
+				{
+					is_highlight: false,
+					url: '/nossas-obras/mock/resedaInterno-3 copy.png',
+					unit: 'Apt 2 Quartos',
+				},
+				{
+					is_highlight: false,
+					url: '/nossas-obras/mock/resedaInterno-4 copy.png',
+					unit: 'Apt 2 Quartos',
+				},
+				{
+					is_highlight: false,
+					url: '/nossas-obras/mock/resedaInterno-5 copy.png',
+					unit: 'Apt 2 Quartos',
+				},
+			],
+		},
+	],
+	areas: ['Academia', 'Salão de festas', 'Piscina'],
+	galeries: {
+		highlighted: [
+			{ is_highlight: true, url: '/nossas-obras/mock/resedaInterno-5.png' },
+			{ is_highlight: false, url: '/nossas-obras/mock/resedaInterno-1.png' },
+			{ is_highlight: false, url: '/nossas-obras/mock/resedaComum-9.jpg' },
+		],
+		units: [
+			{
+				id: 'apt-1',
+				name: 'Apt 1 Quarto',
+				images: [
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaPlanta-2.png',
+						unit: 'Apt 1 Quarto',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaInterno-1.png',
+						unit: 'Apt 1 Quarto',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaInterno-2.png',
+						unit: 'Apt 1 Quarto',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaInterno-3.png',
+						unit: 'Apt 1 Quarto',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaInterno-4.png',
+						unit: 'Apt 1 Quarto',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaInterno-5.png',
+						unit: 'Apt 1 Quarto',
+					},
+				],
+			},
+			{
+				id: 'apt-2',
+				name: 'Apt 2 Quartos',
+				images: [
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaPlanta-1.png',
+						unit: 'Apt 2 Quartos',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaInterno-1 copy.png',
+						unit: 'Apt 2 Quartos',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaInterno-2 copy.png',
+						unit: 'Apt 2 Quartos',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaInterno-3 copy.png',
+						unit: 'Apt 2 Quartos',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaInterno-4 copy.png',
+						unit: 'Apt 2 Quartos',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaInterno-5 copy.png',
+						unit: 'Apt 2 Quartos',
+					},
+				],
+			},
+		],
+		areas: [
+			{
+				id: 'academia',
+				name: 'Academia',
+				images: [
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-1.jpg',
+						area: 'Academia',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-2.jpg',
+						area: 'Academia',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-3.jpg',
+						area: 'Academia',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-4.jpg',
+						area: 'Academia',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-5.jpg',
+						area: 'Academia',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-6.jpg',
+						area: 'Academia',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-7.jpg',
+						area: 'Academia',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-8.jpg',
+						area: 'Academia',
+					},
+				],
+			},
+			{
+				id: 'salao-de-festas',
+				name: 'Salão de festas',
+				images: [
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-7.jpg',
+						area: 'Salão de festas',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-6.jpg',
+						area: 'Salão de festas',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-4.jpg',
+						area: 'Salão de festas',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-8.jpg',
+						area: 'Salão de festas',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-3.jpg',
+						area: 'Salão de festas',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-5.jpg',
+						area: 'Salão de festas',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-3.jpg',
+						area: 'Salão de festas',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-1.jpg',
+						area: 'Salão de festas',
+					},
+				],
+			},
+			{
+				id: 'piscina',
+				name: 'Piscina',
+				images: [
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-1.jpg',
+						area: 'Piscina',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-6.jpg',
+						area: 'Piscina',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-8.jpg',
+						area: 'Piscina',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-7.jpg',
+						area: 'Piscina',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-2.jpg',
+						area: 'Piscina',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-6.jpg',
+						area: 'Piscina',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-8.jpg',
+						area: 'Piscina',
+					},
+					{
+						is_highlight: false,
+						url: '/nossas-obras/mock/resedaComum-4.jpg',
+						area: 'Piscina',
+					},
+				],
+			},
+		],
+	},
+	ytVideoId: 'h6123wm8RWc',
 };
 
-export async function generateStaticParams() {
-	return [{ slug: project.slug }];
-}
-
-const gallery: ProjectGalleryData = {
-	highlight: '/home-page/mock/Rectangle 19.svg',
-	secondary: [
-		'/nossas-obras/mock/resedaInterno-1.jpg',
-		'/nossas-obras/mock/resedaInterno-2.jpg',
-		'/nossas-obras/mock/resedaInterno-3.jpg',
-	],
-};
-
-const floorPlans: ProjectFloorPlan[] = [
-	{
-		id: 'apt-1',
-		label: 'Apt 1 Quarto',
-		description: [
-			'Área - 67m²',
-			'1 Suíte Master',
-			'Sala de estar + jantar',
-			'Cozinha americana',
-			'1 vaga de garagem',
-		],
-		image: '/home-page/visual-id/planta-1.jpg',
-	},
-	{
-		id: 'apt-2',
-		label: 'Apt 2 Quartos',
-		description: [
-			'Área - 91m²',
-			'2 Suítes',
-			'Varanda gourmet',
-			'Living integrado',
-			'2 vagas de garagem',
-		],
-		image: '/home-page/visual-id/planta-2.jpg',
-	},
-];
+// export async function generateStaticParams() {
+// 	return [{ slug: project.slug }];
+// }
 
 const outdoorGallery = [
 	'/home-page/visual-id/reseda-area-1.jpg',
@@ -105,12 +388,22 @@ export default function ProjectDetailPage({
 	return (
 		<>
 			<ProjectHero project={project} />
-			<ProjectGallery gallery={gallery} />
-			<ProjectAmenitiesCta amenities={project.amenities} />
-			<ProjectFloorPlans plans={floorPlans} />
-			<ProjectOutdoorGallery images={outdoorGallery} />
-			<ProjectFinancing partners={financingPartners} />
-			<ProjectContactForm headerImage="/home-page/visual-id/contact.jpg" />
+			<ProjectGallery
+				highlightsGallery={project.galeries.highlighted}
+				breadcrumbs={project.breadcrumb}
+			/>
+			<ProjectAmenitiesCta
+				amenities={project.amenities}
+				status={project.status}
+				isLastUnits={project.lastUnits}
+			/>
+			<ProjectFloorPlans plans={project.floorPlans} />
+			<ProjectOutdoorGallery
+				areas={project.galeries.areas}
+				ytVideoId={project.ytVideoId}
+			/>
+			<SeuSonhoFinancingCta />
+			<HomeArea6 />
 		</>
 	);
 }
