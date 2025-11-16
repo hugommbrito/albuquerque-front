@@ -1,20 +1,23 @@
+'use client';
+
+import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
 import Card from '../zGeneral/Card';
 
 export default function HomeArea4() {
 	return (
-		<section className="py-20 px-15">
-			<h2 className="text-48 font-400 text-center">
+		<section className="py-20 px-4 md:px-15">
+			<h2 className="text-32 md:text-48 font-400 text-center">
 				A natureza arquiteta as melhores soluções.
 			</h2>
-			<h2 className="text-48 font-500 text-center">Nós também.</h2>
+			<h2 className="text-32 md:text-48 font-500 text-center">Nós também.</h2>
 
 			<div className="flex justify-between rounded-full bg-primary-5 p-4 my-6">
 				<span
 					className="
 				rounded-full border
 				bg-primary border-primary
-				text-primary-invert text-20 font-500
+				text-primary-invert text-16 md:text-20 font-500
 				px-6 h-12 flex items-center justify-center "
 				>
 					Empreendimentos
@@ -28,6 +31,7 @@ export default function HomeArea4() {
 					hoverBackgroundColor="hover:bg-primary-5"
 					hoverBorderColor="hover:border-primary-invert"
 					className="text-16 h-12"
+					icon={<ArrowUpRightIcon color="black" />}
 				/>
 			</div>
 
@@ -39,7 +43,9 @@ export default function HomeArea4() {
 					className=""
 					href="/nossas-obras/parque-reseda"
 					width="full"
-					
+					location="Miramar"
+					status="Em Construção"
+					units="28"
 				/>
 				<Card
 					title="Colibris"
@@ -48,6 +54,9 @@ export default function HomeArea4() {
 					className=""
 					href="/nossas-obras/parque-reseda"
 					width="single"
+					location="Miramar"
+					status="Em Construção"
+					units="28"
 				/>
 				<Card
 					title="Jabuticaba"
@@ -56,6 +65,9 @@ export default function HomeArea4() {
 					className=""
 					href="/nossas-obras/parque-reseda"
 					width="single"
+					location="Miramar"
+					status="Em Construção"
+					units="28"
 				/>
 			</div>
 		</section>

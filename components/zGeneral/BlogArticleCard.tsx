@@ -1,5 +1,3 @@
-import ButtonLinkAbq from "./buttonLinkAbq";
-
 interface BlogArticleCardProps {
   title: string;
   subtitle?: string;

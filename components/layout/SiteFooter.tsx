@@ -39,16 +39,27 @@ const CONTACT_SECTIONS = [
 
 export default function SiteFooter() {
 	return (
-		<footer className="bg-primary text-primary-invert px-15 pt-30 pb-12">
+		<footer className="bg-primary text-primary-invert px-4 md:px-15 pt-30 pb-12">
 			<div className="mb-45 grid grid-cols-1 gap-12 md:grid-cols-3">
-				<div>
-					<img
-						src="/visual-id/logo-vert-wt.svg"
-						alt="Albuquerque logo"
-						className="h-65"
-					/>
+				<div className="flex flex-col gap-8 md:order-3">
+					{CONTACT_SECTIONS.map((section) => (
+						<div key={section.title} className="flex flex-col gap-6 ">
+							<p className="font-800 text-primary-invert/80">{section.title}</p>
+							<div className="flex items-center gap-5">
+								<img src="/icons/wa.svg" alt="WhatsApp" className="h-6" />
+								<p className="text-32 font-400 text-primary-invert/80">
+									{section.number}
+								</p>
+								<img
+									src="/icons/arrow-up-right-wt.svg"
+									alt="Abrir conversa"
+									className="h-6"
+								/>
+							</div>
+						</div>
+					))}
 				</div>
-				<div className="flex flex-col gap-8">
+				<div className="flex flex-col gap-8 md:order-2">
 					<p className="font-800 text-primary-invert/80">
 						Escritório Comercial
 					</p>
@@ -70,23 +81,12 @@ export default function SiteFooter() {
 						))}
 					</div>
 				</div>
-				<div className="flex flex-col gap-8">
-					{CONTACT_SECTIONS.map((section) => (
-						<div key={section.title} className="flex flex-col gap-6">
-							<p className="font-800 text-primary-invert/80">{section.title}</p>
-							<div className="flex items-center gap-5">
-								<img src="/icons/wa.svg" alt="WhatsApp" className="h-6" />
-								<p className="text-32 font-400 text-primary-invert/80">
-									{section.number}
-								</p>
-								<img
-									src="/icons/arrow-up-right-wt.svg"
-									alt="Abrir conversa"
-									className="h-6"
-								/>
-							</div>
-						</div>
-					))}
+				<div className="md:order-1">
+					<img
+						src="/visual-id/logo-vert-wt.svg"
+						alt="Albuquerque logo"
+						className="h-65"
+					/>
 				</div>
 			</div>
 			<div className="flex flex-col gap-4 border-t border-primary-4 pt-6 text-xs text-primary-invert sm:flex-row sm:items-center sm:justify-between">
@@ -95,13 +95,13 @@ export default function SiteFooter() {
 						<Link
 							key={link.href}
 							href={link.href}
-							className="transition hover:text-primary-3"
+							className="hidden md:flex transition hover:text-primary-3"
 						>
 							{link.label}
 						</Link>
 					))}
 				</div>
-				<p>© 2025 • Todos direitos reservados</p>
+				<p className="text-center">© 2025 • Todos direitos reservados</p>
 			</div>
 		</footer>
 	);

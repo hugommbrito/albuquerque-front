@@ -5,7 +5,7 @@ import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
 
 export default function HomeArea5() {
 	return (
-		<section className="py-20 px-15">
+		<section className="py-20 px-4 md:px-15">
 			<div className="space-y-6">
 				<div className="flex items-center justify-between">
 					<h2 className="text-32 md:text-40 font-500 text-primary max-w-[20ch]">

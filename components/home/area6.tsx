@@ -2,14 +2,14 @@ import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
 
 export default function HomeArea6() {
 	return (
-		<section className="relative py-20 h-200">
+		<section className="relative bg-[#F1F1F3] py-15 md:py-20 md:h-200">
 			<img
 				src="/home-page/backDrop3.svg"
 				alt=""
-				className="w-full h-200 absolute top-0 z-0 object-cover"
+				className="w-full h-200 absolute top-0 z-0 object-cover hidden md:block"
 			/>
 			<div className="w-full grid grid-cols-2 relative">
-				<div className="space-y-6 col-start-2 px-30 flex flex-col justify-between">
+				<div className="space-y-6 col-span-2 md:col-start-2 px-4 md:px-30 flex flex-col justify-between">
 					<h2 className="text-24 md:text-32 font-500 text-primary max-w-[22ch]">
 						Estamos a uma mensagem de distância de você!
 					</h2>
