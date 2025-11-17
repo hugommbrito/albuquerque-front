@@ -14,7 +14,7 @@ export default function ProjectFloorPlans({ plans }: ProjectFloorPlansProps) {
 	);
 
 	return (
-		<section className="py-20 px-15 bg-primary-invert">
+		<section className="py-20 px-4 md:px-15 bg-primary-invert">
 			<div className="flex gap-4 items-center bg-primary-5 p-4 rounded-full ">
 				{plans.map((plan, index) => (
 					<button
@@ -32,7 +32,7 @@ export default function ProjectFloorPlans({ plans }: ProjectFloorPlansProps) {
 				))}
 			</div>
 
-			<div className="grid gap-6 grid-cols-3">
+			<div className="md:grid md:grid-cols-3 gap-6">
 				<div className="overflow-hidden py-8">
 					{selectedFloorPlan.descriptionList.map((item, index) => (
 						<p key={index} className="text-24 text-primary mx-10 mb-6">
@@ -40,8 +40,8 @@ export default function ProjectFloorPlans({ plans }: ProjectFloorPlansProps) {
 						</p>
 					))}
 				</div>
-				<div className="max-h-150 col-span-2 py-8 flex justify-between">
-					<div className="w-9/10  rounded-3xl bg-primary-5 p-6 mr-7">
+				<div className="max-h-150 col-span-2 py-8 md:flex md:justify-between space-y-3">
+					<div className="md:w-9/10  rounded-3xl bg-primary-5 p-6 md:mr-7">
 						<img
 							src={selectedPlanImage}
 							alt={`Planta do tipo ${selectedFloorPlan.name}`}
@@ -49,7 +49,7 @@ export default function ProjectFloorPlans({ plans }: ProjectFloorPlansProps) {
 						/>
 					</div>
 
-					<div className="w-1/10 grid grid-rows-6 gap-3">
+					<div className="md:w-1/10 grid grid-cols-6 md:grid-rows-6 md:grid-cols-1 gap-1 md:gap-3">
 						{selectedFloorPlan.images.map((image, index) => (
 							<div
 								key={index}

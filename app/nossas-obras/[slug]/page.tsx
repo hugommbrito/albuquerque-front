@@ -15,6 +15,7 @@ import {
 } from '@/components/nossas-obras/detail/types';
 import SeuSonhoFinancingCta from '@/components/seu-sonho/FinancingCta';
 import { CarIcon, OvenIcon, SwimmingPoolIcon } from '@phosphor-icons/react';
+import { use } from 'react';
 
 const project: ProjectInfo = {
 	slug: 'parque-reseda',
@@ -35,9 +36,9 @@ const project: ProjectInfo = {
 	lastUnits: true,
 	deliveryYear: '2025',
 	amenities: [
-		{ label: <SwimmingPoolIcon size={35} />, value: 'Piscina', span: 1 },
-		{ label: <OvenIcon size={35} />, value: 'Área Gourmet', span: 1 },
-		{ label: <CarIcon size={35} />, value: '3 Vagas de garagem', span: 2 },
+		{ label: <SwimmingPoolIcon size={35} color='' />, value: 'Piscina', span: 1 },
+		{ label: <OvenIcon size={35} color='' />, value: 'Área Gourmet', span: 1 },
+		{ label: <CarIcon size={35} color='' />, value: '3 Vagas de garagem', span: 2 },
 	],
 	floorPlans: [
 		{
@@ -356,28 +357,14 @@ const project: ProjectInfo = {
 // 	return [{ slug: project.slug }];
 // }
 
-const outdoorGallery = [
-	'/home-page/visual-id/reseda-area-1.jpg',
-	'/home-page/visual-id/reseda-area-2.jpg',
-	'/home-page/visual-id/reseda-area-3.jpg',
-	'/home-page/visual-id/reseda-area-4.jpg',
-	'/home-page/visual-id/reseda-area-5.jpg',
-	'/home-page/visual-id/reseda-area-6.jpg',
-];
-
-const financingPartners = [
-	'Minha Casa Minha Vida',
-	'Caixa',
-	'FGTS',
-	'Use seu FGTS',
-];
-
 export default function ProjectDetailPage({
 	params,
 }: {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }) {
-	if (params.slug !== project.slug) {
+	const { slug } = use(params);
+
+	if (slug !== project.slug) {
 		return (
 			<div className="py-32 text-center text-primary">
 				Empreendimento não encontrado.

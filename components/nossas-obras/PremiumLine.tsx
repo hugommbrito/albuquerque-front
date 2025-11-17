@@ -3,7 +3,7 @@ import Card from '../zGeneral/Card';
 
 export default function NossasObrasPremiumLine() {
 	return (
-		<section className="px-15 py-25 bg-primary">
+		<section className="px-4 md:px-15 py-25 bg-primary">
 			<div className="flex justify-between rounded-full bg-primary-4 p-4 my-6">
 				<span
 					className="
@@ -19,7 +19,10 @@ export default function NossasObrasPremiumLine() {
 				title="Parque Resedá"
 				subtitle="Seu sonho se tornou o nosso."
 				image="/home-page/mock/Rectangle 19.svg"
-				className="h-72 md:h-96"
+				className="h-145"
+				location="Miramar"
+				status="Em Construção"
+				units="28"
 			/>
 		</section>
 	);

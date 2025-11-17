@@ -85,7 +85,7 @@ export default function SiteFooter() {
 					<img
 						src="/visual-id/logo-vert-wt.svg"
 						alt="Albuquerque logo"
-						className="h-65"
+						className="md:h-65 w-full md:w-fit object-contain"
 					/>
 				</div>
 			</div>

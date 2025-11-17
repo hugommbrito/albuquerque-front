@@ -14,7 +14,7 @@ export default function ProjectOutdoorGallery({
 		areas[0]
 	);
 	return (
-		<section className="p-15">
+		<section className="px-4 md:p-15">
 			<div className="flex gap-4 items-center bg-primary-5 p-4 mb-8 rounded-full ">
 				{areas.map((area, index) => (
 					<button
@@ -31,9 +31,9 @@ export default function ProjectOutdoorGallery({
 					</button>
 				))}
 			</div>
-			<div className="grid gap-4 grid-cols-4">
+			<div className="grid gap-4 grid-cols-2 md:grid-cols-4">
 				{selectedFloorArea.images.map((image, index) => (
-					<div key={index} className="h-80 rounded-3xl overflow-hidden">
+					<div key={index} className="h-45 md:h-80 rounded-3xl overflow-hidden">
 						<img
 							src={image.url}
 							alt="Área comum do empreendimento"
@@ -43,7 +43,7 @@ export default function ProjectOutdoorGallery({
 				))}
 			</div>
 			{ytVideoId && (
-				<div className="mt-16 w-full h-160 bg-primary-5 rounded-3xl overflow-hidden">
+				<div className="mt-16 w-full h-70 md:h-160 bg-primary-5 rounded-3xl overflow-hidden">
 					<iframe
 						width="100%"
 						height="100%"

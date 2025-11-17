@@ -1,5 +1,5 @@
-import { Icon } from "@phosphor-icons/react";
-import { ReactElement } from "react";
+import type { Icon } from '@phosphor-icons/react';
+import type { ReactElement } from 'react';
 
 export type ProjectHeroHighlights = {
 	label: string;
@@ -14,7 +14,7 @@ export type ProjectBreadcrumb = {
 export type ProjectAmenity = {
 	label: ReactElement<Icon>;
 	value: string;
-  span: number;
+	span: number;
 };
 
 export type ProjectInfo = {
@@ -22,38 +22,39 @@ export type ProjectInfo = {
 	name: string;
 	subtitle: string;
 	heroImage: string;
-  heroHighlights: ProjectHeroHighlights[];
+	heroHighlights: ProjectHeroHighlights[];
 	breadcrumb: ProjectBreadcrumb[];
 	location: string;
 	status: string;
-  lastUnits: boolean;
+	lastUnits: boolean;
 	deliveryYear: string;
 	amenities: ProjectAmenity[];
-  floorPlans: ProjectFloorPlan[];
-  areas: string[];
-  ytVideoId: string | null;
-  galeries: {
-    highlighted: ProjectGalleryData[];
-    units: SpecificGallery[];
-    areas: SpecificGallery[];
-}};
+	floorPlans: ProjectFloorPlan[];
+	areas: string[];
+	ytVideoId: string | null;
+	galeries: {
+		highlighted: ProjectGalleryData[];
+		units: SpecificGallery[];
+		areas: SpecificGallery[];
+	};
+};
 
 export type ProjectGalleryData = {
 	is_highlight: boolean;
 	url: string;
-  unit?: string;
-  area?: string;
+	unit?: string;
+	area?: string;
 };
 
 export type SpecificGallery = {
-  id: string
-  name: string
-  images: ProjectGalleryData[]
-}
+	id: string;
+	name: string;
+	images: ProjectGalleryData[];
+};
 
 export type ProjectFloorPlan = {
 	id: string;
 	name: string;
 	descriptionList: string[];
-  images: ProjectGalleryData[]
+	images: ProjectGalleryData[];
 };

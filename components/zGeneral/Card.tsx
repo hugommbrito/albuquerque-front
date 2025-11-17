@@ -1,3 +1,5 @@
+'use client';
+
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import ButtonLinkAbq from './buttonLinkAbq';
 
@@ -63,7 +65,7 @@ export default function Card({
 					className="mt-8 md:hidden"
 				/>
 				<div className="h-30 mt-8 hidden md:flex justify-between items-end translate-y-60 group-hover:translate-y-0 transition-all duration-500 ease-out">
-					<div className='flex gap-4'>
+					<div className="flex gap-4">
 						{location && (
 							<div className="min-w-35 p-4 bg-primary rounded-2xl h-30 flex flex-col justify-between">
 								<p className="text-14">Localização</p>
@@ -83,13 +85,6 @@ export default function Card({
 							</div>
 						)}
 					</div>
-					{/* <ButtonLinkAbq
-						href=""
-						text=""
-						backgroundColor="bg-primary-invert"
-						icon={<ArrowUpRightIcon />}
-						className="h-fit p-8 hidden md:block hover:cursor-pointer"
-					/> */}
 				</div>
 				{children}
 			</div>
