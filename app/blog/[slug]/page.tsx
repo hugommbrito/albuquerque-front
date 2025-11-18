@@ -129,7 +129,7 @@ export default function BlogArticlePage({ params }: BlogArticlePageProps) {
 
 	return (
 		<div className="bg-primary-invert">
-			<section className="px-15 py-42">
+			<section className="px-4 md:px-15 py-42">
 				<div className="space-y-10">
 					<div className="flex items-center gap-3 text-14 text-primary-3">
 						<Link
@@ -141,7 +141,7 @@ export default function BlogArticlePage({ params }: BlogArticlePageProps) {
 						</Link>
 					</div>
 
-					<h1 className="w-2/5 text-48 font-500 text-primary leading-tight">
+					<h1 className="md:w-2/5 text-32 md:text-48 font-500 text-primary leading-tight">
 						{article.title}
 					</h1>
 
@@ -153,14 +153,13 @@ export default function BlogArticlePage({ params }: BlogArticlePageProps) {
 							className="h-full w-full object-cover"
 						/>
 					</div>
-					<article className="w-1/2 min-w-[550px] mx-auto space-y-6 text-18 leading-9 text-primary-2">
+					<article className="md:w-1/2 md:min-w-[550px] mx-auto space-y-6 text-18 leading-9 text-primary-2">
 						<div
 							className=" "
-							// className="space-y-6 text-18 leading-9 text-primary-2     [&_h2]:text-20 [&_h2]:font-500 [&_h2]:text-primary [&_figure]:rounded-3xl [&_figure]:overflow-hidden [&_figure_img]:h-full [&_figure_img]:w-full [&_figure_img]:object-cover"
 							dangerouslySetInnerHTML={{ __html: article.content }}
 						/>
             {/* TODO: create share links component and logics */ }
-						<div className="border-t border-primary/10 pt-8">
+						<div className="border-t border-primary/10 pt-8 hidden md:block">
 							<h3 className="text-16 font-500 uppercase tracking-[0.2em] text-primary-3">
 								Compartilhar
 							</h3>
@@ -180,7 +179,7 @@ export default function BlogArticlePage({ params }: BlogArticlePageProps) {
 				</div>
 			</section>
 
-			<section className="bg-primary-5 px-15 py-16">
+			<section className="bg-primary-5 px-15 py-16 hidden md:block">
 				<div className="space-y-10">
 					<div className="flex flex-wrap items-center justify-between gap-6">
 						<div className="space-y-2">

@@ -39,7 +39,11 @@ const articles = [
 	},
 ];
 
-export default function BlogArticleList({sessionTitle}: {sessionTitle: string}) {
+export default function BlogArticleList({
+	sessionTitle,
+}: {
+	sessionTitle: string;
+}) {
 	return (
 		<section className="space-y-12 border-t-2 border-primary-5">
 			<header className="mt-6">
@@ -50,24 +54,24 @@ export default function BlogArticleList({sessionTitle}: {sessionTitle: string}) 
 				{articles.map((article) => (
 					<article
 						key={article.id}
-						className="gap-12 overflow-hidden rounded-[32px] py-6 grid grid-cols-3"
+						className="gap-6 md:gap-12 overflow-hidden rounded-[32px] py-6 flex flex-col md:grid md:grid-cols-3"
 					>
-						<div className="relative h-88 w-full overflow-hidden rounded-[28px] bg-primary/10">
+						<div className="relative h-66 md:h-88 w-full overflow-hidden rounded-[28px] bg-primary/10">
 							<img
 								src={article.image}
 								alt={article.title}
 								className="h-full w-full object-cover"
 							/>
 						</div>
-						<div className="col-span-2 max-w-2/3 flex flex-col justify-center gap-6">
+						<div className="col-span-2 md:max-w-2/3 flex flex-col justify-center gap-6">
 							<div className="space-y-4">
 								<span className="inline-block text-14 font-700 uppercase text-primary">
 									• {article.tag}
 								</span>
-								<h3 className="text-24 font-500 text-primary">
+								<h3 className="text-20 md:text-24 font-500 text-primary">
 									{article.title}
 								</h3>
-								<p className="text-18 text-primary-3">{article.excerpt}</p>
+								<p className="text-16 md:text-18 text-primary-3">{article.excerpt}</p>
 							</div>
 							<Link
 								href={article.href}

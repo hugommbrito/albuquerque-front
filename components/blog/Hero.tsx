@@ -1,13 +1,18 @@
 export default function BlogHero() {
 	return (
-		<section className="relative h-155">
+		<section className="relative h-250 md:h-155 bg-primary -z-20">
 			<img
 				src="/blog/backDrop1.png"
 				alt=""
-				className="absolute inset-0 h-full -z-10"
+				className="absolute inset-0 h-full -z-10 hidden md:block"
+			/>
+			<img
+				src="/blog/mobileBackDrop1.png"
+				alt=""
+				className=" -z-10 md:hidden"
 			/>
 
-			<div className="space-y-6 w-2/3 px-15 h-full flex flex-col justify-center">
+			<div className="space-y-6 md:w-2/3 px-4 md:px-15 md:h-full flex flex-col justify-center mt-20 md:mt-0">
 				<span className="
 				inline-flex items-center
 				w-fit py-4 px-6 rounded-full
@@ -16,7 +21,7 @@ export default function BlogHero() {
 				>
 					Blog
 				</span>
-				<h1 className="text-96 text-primary-invert leading-25">
+				<h1 className="text-48 md:text-96 text-primary-invert leading-16 md:leading-25">
 					Compartilhar crescer, inspirar.
 				</h1>
 			</div>

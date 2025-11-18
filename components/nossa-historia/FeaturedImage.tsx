@@ -1,6 +1,6 @@
 export default function NossaHistoriaFeaturedImage() {
 	return (
-		<section className="mx-15 h-145">
+		<section className="mx-4 md:mx-15 h-65 md:h-145">
 				<div className="h-full w-full rounded-[32px] overflow-hidden shadow-lg">
 					<img
 						src="/home-page/mock/Rectangle 22.jpg"

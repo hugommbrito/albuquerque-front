@@ -42,7 +42,7 @@ export default function BlogPage() {
 	return (
 		<div className="text-primary">
 			<BlogHero />
-			<main className="p-18 mx-auto space-y-16">
+			<main className="px-4 py-8 md:p-18 mx-auto space-y-16">
 				<BlogFeaturedArticle />
 				<BlogArticleList sessionTitle='Todos os artigos'/>
 				<BlogFeaturedArticle />

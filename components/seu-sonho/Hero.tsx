@@ -1,17 +1,16 @@
-'use client'
+'use client';
 
 import { CaretRightIcon } from '@phosphor-icons/react';
 import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
 
 export default function SeuSonhoHero() {
 	return (
-		<section className="relative h-200 w-full ">
-			<div className="h-full w-1/2 pl-15 flex flex-col justify-center space-y-8">
-				<div className="">
-					<h1 className="text-36 md:text-56 font-500 text-primary leading-tight max-w-[18ch]">
-						Que tal começar a idealizar sua conquista? Faça uma simulação:
-					</h1>
-				</div>
+		<section className="relative h-full md:h-200 w-full bg-[#DDDDDD] -z-10">
+			<div className="h-full md:w-1/2 px-4 py-40 md:py-0 md:pl-15 flex flex-col justify-center space-y-8">
+				<h1 className="text-36 md:text-56 font-500 text-primary leading-tight max-w-[18ch]">
+					Que tal começar a idealizar sua conquista? Faça uma simulação:
+				</h1>
+
 				<form className="space-y-4 max-w-md">
 					<input
 						className="w-full rounded-full border border-primary/15 bg-white px-6 py-3 text-14 text-primary outline-none focus:border-primary"
@@ -26,8 +25,8 @@ export default function SeuSonhoHero() {
 						text="Iniciar simulação"
 						variant="filled"
 						icon={<CaretRightIcon />}
-            backgroundColor='bg-primary-invert border-primary-invert'
-            textColor='text-primary'
+						backgroundColor="bg-primary-invert border-primary-invert"
+						textColor="text-primary"
 						fullWidth
 					/>
 				</form>
@@ -35,7 +34,12 @@ export default function SeuSonhoHero() {
 			<img
 				src="/seu-sonho/backDrop1.png"
 				alt="Casal celebrando nova casa"
-				className="absolute inset-0 -z-10 h-full w-full object-cover"
+				className="absolute inset-0 -z-10 h-full w-full object-cover hidden md:block"
+			/>
+			<img
+				src="/seu-sonho/mobileBackDrop-2.png"
+				alt="Casal celebrando nova casa"
+				className="h-full w-full object-cover md:hidden"
 			/>
 		</section>
 	);

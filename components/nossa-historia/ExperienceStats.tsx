@@ -21,17 +21,17 @@ const stats = [
 
 export default function NossaHistoriaExperienceStats() {
 	return (
-		<section className="py-30 px-15">
-			<div className="grid gap-10 grid-cols-2 items-start">
+		<section className="py-30 px-4 md:px-15">
+			<div className="grid gap-10 grid-cols-1 md:grid-cols-2 items-start">
 				<div className="max-w-140">
-					<h2 className="text-48 mb-12">
+					<h2 className="text-32 md:text-48 mb-12">
 						20 anos de experiência em gestão & construção
 					</h2>
-					<p className="text-18 text-primary-3 mb-10 ">
+					<p className="text-24 md:text-18 text-primary-3 mb-10 ">
 						Você sabe quando ama a sua vocação quando transforma  aquilo em algo
 						para compartilhar com as pessoas.
 					</p>
-					<p className="text-18 text-primary-3">
+					<p className="text-24 md:text-18 text-primary-3">
 						A Albuquerque engenharia tem as suas raízes no universo da
 						consultoria em construções, onde através de técnicas, especialidade,
 						e kowhow, ajudamos empresas à darem vida de forma a suas ideias. 

@@ -29,12 +29,12 @@ const videoTopics = [
 
 export default function SeuSonhoVideoTopics() {
 	return (
-		<section className="py-20 px-15">
-			<div className="space-y-3 w-1/3 mb-16">
-				<h2 className="text-48">
+		<section className="py-20 px-4 md:px-15">
+			<div className="space-y-3 md:w-1/2 mb-16">
+				<h2 className="text-32 md:text-48 leading-10">
 					Sua virada se chave acaba de começar
 				</h2>
-				<p className="text-16 ">
+				<p className="text-20 md:text-16 ">
 					Escolha o tema, dê o play e tire todas as suas dúvidas.
 				</p>
 			</div>
@@ -43,7 +43,7 @@ export default function SeuSonhoVideoTopics() {
 					{videoTopics.map((topic) => (
 						<div
 							key={topic.title}
-							className="w-[290px] h-[520px] flex-shrink-0 space-y-3"
+							className="w-[160px] md:w-[290px] h-[290px] md:h-[520px] flex-shrink-0 space-y-3"
 						>
 							<div className="relative h-4/5 overflow-hidden rounded-3xl">
 								<img
@@ -63,7 +63,7 @@ export default function SeuSonhoVideoTopics() {
 					))}
 				</div>
 			</div>
-			<div className="rounded-2xl bg-primary px-6 py-4 mt-2 flex items-center justify-between">
+			<div className="rounded-2xl bg-primary px-6 py-4 mt-2 md:flex items-center justify-between space-y-20">
         <p className="text-white font-500">
 				Prefere ler? Baixe nosso ebook “Como financiar meu sonho” grátis.
         </p>

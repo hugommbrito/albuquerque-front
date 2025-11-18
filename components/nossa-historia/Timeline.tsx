@@ -30,15 +30,15 @@ export default function NossaHistoriaTimeline() {
 		));
 
 	return (
-		<section className="px-15 py-28">
+		<section className="px-4 md:px-15 py-28">
 			<div className="">
 				<div className="max-w-[50ch]">
-					<h3 className="mb-22 text-36  font-500 text-primary leading-tight">
+					<h3 className="mb-22 text-32 md:text-36 font-500 text-primary leading-tight">
 						Uma reputação que é resultado de muitos anos de construção.
 					</h3>
 				</div>
-				<div className="grid gap-10 grid-cols-2">
-					<div className="flex gap-5 pr-40">
+				<div className="grid gap-10 grid-cols-1 md:grid-cols-2">
+					<div className="flex gap-5 md:pr-40">
             <img src="/nossa-historia/timeLine2.svg" alt="" className="" />
 					  <div className="h-full flex flex-col justify-between text-primary">
   						{renderItems(historyLeft)}
@@ -47,7 +47,7 @@ export default function NossaHistoriaTimeline() {
 					<div className="flex gap-5">
             <img src="/nossa-historia/timeLine1.svg" alt="" className="" />
 					  <div className="h-full flex flex-col justify-between text-primary">
-							<p className="text-32">Virar a chave, para abrir novas portas. Transformamos agora conhecimento em sonhos edificados.</p>
+							<p className="text-24 md:text-32">Virar a chave, para abrir novas portas. Transformamos agora conhecimento em sonhos edificados.</p>
   						{renderItems(historyRight)}
   					</div>
 					</div>
