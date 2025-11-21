@@ -1,8 +1,9 @@
 'use client'
 
-import { ArrowUpRightIcon, FireIcon, MapPinIcon } from '@phosphor-icons/react';
+import * as PhosporIcons from '@phosphor-icons/react';
 import ButtonLinkAbq from '../../zGeneral/buttonLinkAbq';
 import { ProjectAmenity } from './types';
+import BackOfficeIcon from '../../zGeneral/BacofficeIconComponent';
 
 type ProjectAmenitiesCtaProps = {
 	amenities: ProjectAmenity[];
@@ -25,7 +26,7 @@ export default function ProjectAmenitiesCta({
 				</div>
 				<div className="grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-4">
 					<div className="h-30 flex flex-col justify-between rounded-3xl border border-primary/10 bg-primary-5 px-4 py-5">
-						<MapPinIcon size={32} color=''/>
+						<PhosporIcons.MapPinIcon size={32} color=''/>
 						<p className="text-20 font-500 text-primary mt-2">Miramar</p>
 					</div>
 					<div className="h-30 flex flex-col justify-between md:col-span-2 rounded-3xl border border-primary/10 bg-white px-4 py-5">
@@ -45,7 +46,9 @@ export default function ProjectAmenitiesCta({
 							key={item.value}
 							className={`min-h-30 col-span-1 md:col-span-${item.span} flex flex-col justify-between rounded-3xl border border-primary/10 bg-primary-5 px-4 py-5`}
 						>
-							{item.label}
+							{/* {`<PhosporIcons.${item.label} size={35} color='' />`}
+							{item.label} */}
+							<BackOfficeIcon iconName={item.label} size={35} className="text-primary" />
 							<p className="text-20 font-500 text-primary mt-2">{item.value}</p>
 						</div>
 					))}
@@ -56,7 +59,7 @@ export default function ProjectAmenitiesCta({
 								{
 									isLastUnits && 
 									<div className='flex gap-3'>
-										<FireIcon size={35} className="text-white mb-2" />
+										<PhosporIcons.FireIcon size={35} className="text-white mb-2" />
 										<p className="text-20 font-500 text-white">
 											Últimas unidades
 										</p>
@@ -67,7 +70,7 @@ export default function ProjectAmenitiesCta({
 								href="/contato"
 								text="Fale conosco"
 								variant="filled"
-								icon={<ArrowUpRightIcon />}
+								icon={<PhosporIcons.ArrowUpRightIcon />}
 								backgroundColor='bg-primary-invert border-primary-invert'
 								textColor='text-primary'
 							/>

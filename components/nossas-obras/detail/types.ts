@@ -1,5 +1,4 @@
-import type { Icon } from '@phosphor-icons/react';
-import type { ReactElement } from 'react';
+export type PhosphorIconName = keyof typeof import('@phosphor-icons/react');
 
 export type ProjectHeroHighlights = {
 	label: string;
@@ -12,7 +11,7 @@ export type ProjectBreadcrumb = {
 };
 
 export type ProjectAmenity = {
-	label: ReactElement<Icon>;
+	label: PhosphorIconName;
 	value: string;
 	span: number;
 };

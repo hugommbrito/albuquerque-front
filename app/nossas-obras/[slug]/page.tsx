@@ -14,7 +14,7 @@ import {
 	ProjectInfo,
 } from '@/components/nossas-obras/detail/types';
 import SeuSonhoFinancingCta from '@/components/seu-sonho/FinancingCta';
-import { CarIcon, OvenIcon, SwimmingPoolIcon } from '@phosphor-icons/react';
+import * as PhosporIcons from '@phosphor-icons/react';
 import { use } from 'react';
 
 const project: ProjectInfo = {
@@ -36,9 +36,9 @@ const project: ProjectInfo = {
 	lastUnits: true,
 	deliveryYear: '2025',
 	amenities: [
-		{ label: <SwimmingPoolIcon size={35} color='' />, value: 'Piscina', span: 1 },
-		{ label: <OvenIcon size={35} color='' />, value: 'Área Gourmet', span: 1 },
-		{ label: <CarIcon size={35} color='' />, value: '3 Vagas de garagem', span: 2 },
+		{ label: 'SwimmingPool', value: 'Piscina', span: 1 },
+		{ label: 'Oven', value: 'Área Gourmet', span: 1 },
+		{ label: 'Car', value: '3 Vagas de garagem', span: 2 },
 	],
 	floorPlans: [
 		{
