@@ -1,3 +1,4 @@
+'use client'
 import { useState } from 'react';
 import { ProjectFloorPlan } from './types';
 
@@ -6,12 +7,15 @@ type ProjectFloorPlansProps = {
 };
 
 export default function ProjectFloorPlans({ plans }: ProjectFloorPlansProps) {
-	const primaryPlan = plans[0];
+	const primaryPlan = plans[0] 
 
 	const [selectedFloorPlan, setSelectedFloorPlan] = useState(plans[0]);
 	const [selectedPlanImage, setSelectedPlanImage] = useState(
-		selectedFloorPlan.images[0].url
+		selectedFloorPlan?.images[0]?.url
 	);
+
+	console.log(selectedFloorPlan);
+	console.log(selectedFloorPlan.descriptionList);
 
 	return (
 		<section className="py-20 px-4 md:px-15 bg-primary-invert">
@@ -34,7 +38,7 @@ export default function ProjectFloorPlans({ plans }: ProjectFloorPlansProps) {
 
 			<div className="md:grid md:grid-cols-3 gap-6">
 				<div className="overflow-hidden py-8">
-					{selectedFloorPlan.descriptionList.map((item, index) => (
+					{selectedFloorPlan?.descriptionList.map((item, index) => (
 						<p key={index} className="text-24 text-primary mx-10 mb-6">
 							• {item}
 						</p>

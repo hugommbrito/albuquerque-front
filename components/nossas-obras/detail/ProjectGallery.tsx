@@ -22,10 +22,10 @@ export default function ProjectGallery({
 						) : (
 							<CaretLeftIcon />
 						)}
-						{item.href === '#' ? (
+						{item.url === '#' ? (
 							item.label
 						) : (
-							<a href={item.href}>{item.label}</a>
+							<a href={item.url}>{item.label}</a>
 						)}
 					</span>
 				))}

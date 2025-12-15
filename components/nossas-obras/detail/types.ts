@@ -7,7 +7,7 @@ export type ProjectHeroHighlights = {
 
 export type ProjectBreadcrumb = {
 	label: string;
-	href: string;
+	url: string;
 };
 
 export type ProjectAmenity = {
@@ -21,12 +21,11 @@ export type ProjectInfo = {
 	name: string;
 	subtitle: string;
 	heroImage: string;
-	heroHighlights: ProjectHeroHighlights[];
+	heroHighLights: ProjectHeroHighlights[];
 	breadcrumb: ProjectBreadcrumb[];
 	location: string;
 	status: string;
 	lastUnits: boolean;
-	deliveryYear: string;
 	amenities: ProjectAmenity[];
 	floorPlans: ProjectFloorPlan[];
 	areas: string[];

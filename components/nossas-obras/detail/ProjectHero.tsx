@@ -5,6 +5,7 @@ type ProjectHeroProps = {
 };
 
 export default function ProjectHero({ project }: ProjectHeroProps) {
+	console.log(project.heroHighLights)
 	return (
 		<section className="relative">
 			<div className="relative h-[800px]">
@@ -20,7 +21,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
 						<p className="text-24 md:text-32 text-primary-invert/80">{project.subtitle}</p>
 					</div>
 					<div className="flex flex-wrap items-center gap-12 md:gap-22 text-12">
-						{project.heroHighlights.map((highlight) => (
+						{project.heroHighLights.map((highlight) => (
 							<div>
 							  <p key={highlight.label} className="text-14">
   								{highlight.label}
