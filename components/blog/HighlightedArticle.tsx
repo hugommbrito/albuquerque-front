@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
+import { BlogArticleInfo } from './types';
 
 const featuredArticle = {
 	tag: 'DESTAQUE DA SEMANA',
@@ -10,11 +11,15 @@ const featuredArticle = {
 	href: '#',
 };
 
-export default function BlogFeaturedArticle() {
+type HighlightedArticleProps = {
+	featuredArticle: BlogArticleInfo
+};
+
+export default function BlogHighlightedArticle({ featuredArticle }: HighlightedArticleProps) {
 	return (
 		<article className="relative overflow-hidden rounded-[48px] h-220 md:h-155 bg-primary text-primary-invert">
 			<img
-				src={featuredArticle.image}
+				src={featuredArticle.cover_image_url}
 				alt={featuredArticle.title}
 				className="absolute inset-0 h-full w-full object-cover"
 			/>
@@ -26,11 +31,11 @@ export default function BlogFeaturedArticle() {
 					</span>
 					<h2 className="text-32 md:text-56 font-500 leading-tight">{featuredArticle.title}</h2>
 					<p className="text-20 text-primary-invert/80 max-w-[46ch]">
-						{featuredArticle.excerpt}
+						{featuredArticle.short_description}
 					</p>
 				</div>
 				<ButtonLinkAbq
-					href={featuredArticle.href}
+					href={`/blog/${featuredArticle.slug}`}
 					text="Ler artigo"
 					variant="outline"
 					backgroundColor="bg-primary-invert"

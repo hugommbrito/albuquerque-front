@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { BlogArticleInfo } from './types';
 
 const articles = [
 	{
@@ -39,16 +40,16 @@ const articles = [
 	},
 ];
 
-export default function BlogArticleList({
-	sessionTitle,
-}: {
-	sessionTitle: string;
-}) {
+type BlogRegularArticlesListProps = {
+	articles: BlogArticleInfo[]
+}
+
+export default function BlogRegularArticlesList({ articles }: BlogRegularArticlesListProps) {
 	return (
 		<section className="space-y-12 border-t-2 border-primary-5">
-			<header className="mt-6">
+			{/* <header className="mt-6">
 				<h2 className="text-20 font-700">{sessionTitle}</h2>
-			</header>
+			</header> */}
 
 			<div className="space-y-6">
 				{articles.map((article) => (
@@ -58,7 +59,7 @@ export default function BlogArticleList({
 					>
 						<div className="relative h-66 md:h-88 w-full overflow-hidden rounded-[28px] bg-primary/10">
 							<img
-								src={article.image}
+								src={article.cover_image_url}
 								alt={article.title}
 								className="h-full w-full object-cover"
 							/>
@@ -71,10 +72,10 @@ export default function BlogArticleList({
 								<h3 className="text-20 md:text-24 font-500 text-primary">
 									{article.title}
 								</h3>
-								<p className="text-16 md:text-18 text-primary-3">{article.excerpt}</p>
+								<p className="text-16 md:text-18 text-primary-3">{article.short_description}</p>
 							</div>
 							<Link
-								href={article.href}
+								href={article.slug ? `/blog/${article.slug}` : '#'}
 								className="inline-flex items-center gap-2 text-14 font-500 text-primary transition hover:text-primary-3"
 							>
 								Ler artigo

@@ -14,4 +14,20 @@ export class PageContentProvider {
 
 		return response;
 	}
+
+	static async getBlogArticles(slug: string | undefined = undefined) {
+		const requestUrl = slug ? `/blog/${slug}` : '/blog';
+
+		const response = await apiController
+			.get(requestUrl)
+			.then((res) => res)
+			.catch((err) => {
+				console.error('Error fetching blog articles:', err);
+				return err;
+			});
+
+		return response;
+	}
+
+
 }
