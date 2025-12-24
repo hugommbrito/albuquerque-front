@@ -41,7 +41,7 @@ const articles = [
 ];
 
 type BlogRegularArticlesListProps = {
-	articles: BlogArticleInfo[]
+	articles: BlogArticleInfo['article'][];
 }
 
 export default function BlogRegularArticlesList({ articles }: BlogRegularArticlesListProps) {

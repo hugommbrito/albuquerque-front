@@ -3,8 +3,15 @@
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
 import Card from '../zGeneral/Card';
+import { HomePageInfo } from './type';
+import LoadingAbq from '../zGeneral/LoadingAbq';
 
-export default function HomeArea4() {
+type HomeArea4Props = {
+	homePageVentures?: HomePageInfo['home_page_ventures'],
+	isLoading: Boolean
+}
+
+export default function HomeArea4({homePageVentures, isLoading}: HomeArea4Props) {
 	return (
 		<section className="py-20 px-4 md:px-15">
 			<h2 className="text-32 md:text-48 font-400 text-center">
@@ -36,39 +43,31 @@ export default function HomeArea4() {
 			</div>
 
 			<div className="grid gap-6 md:grid-cols-2">
-				<Card
-					title="Parque Resedá"
-					subtitle="Seu sonho se tornou o nosso."
-					image="/home-page/mock/Rectangle 19.svg"
-					className=""
-					href="/nossas-obras/parque-reseda"
-					width="full"
-					location="Miramar"
-					status="Em Construção"
-					units="28"
-				/>
-				<Card
-					title="Colibris"
-					subtitle="Seu sonho se tornou o nosso."
-					image="/home-page/mock/Rectangle 20.svg"
-					className=""
-					href="/nossas-obras/parque-reseda"
-					width="single"
-					location="Miramar"
-					status="Em Construção"
-					units="28"
-				/>
-				<Card
-					title="Jabuticaba"
-					subtitle="Seu sonho se tornou o nosso."
-					image="/home-page/mock/Rectangle 21.svg"
-					className=""
-					href="/nossas-obras/parque-reseda"
-					width="single"
-					location="Miramar"
-					status="Em Construção"
-					units="28"
-				/>
+				{isLoading ? <LoadingAbq className='col-span-2' /> : (
+					homePageVentures?.map((venture, index) => {
+						let cardWidth: 'single' | 'full' = 'single';
+						if (
+							index === 0 || 
+							index % 3 === 0 || 
+							(homePageVentures.length % 3 === 1 && index === homePageVentures.length - 1	)
+						){
+							cardWidth = 'full';
+						}
+						return (
+							<Card
+								title={venture.name}
+								subtitle={venture.short_description}
+								image={venture.hero_image_url}
+								className=""
+								href={`/nossas-obras/${venture.slug}`}
+								width={cardWidth}
+								location={venture.location}
+								status={venture.status}
+								units={venture.total_units}
+							/>
+						)
+					})
+				)}
 			</div>
 		</section>
 	);

@@ -11,6 +11,7 @@ import { PageContentProvider } from '@/providers/api/api.providers';
 import GenericCategory from '@/components/nossas-obras/GenericCategory';
 import LoadingAbq from '@/components/zGeneral/LoadingAbq';
 
+
 export default function NossasObras() {
 	const [categoriesInfo, setCategoriesInfo] = useState<
 		CategoriesPageInfo | undefined

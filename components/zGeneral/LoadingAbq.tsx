@@ -1,7 +1,7 @@
 import React from 'react';
 
-const LoadingAbq: React.FC = () => (
-  <div style={{
+const LoadingAbq: React.FC<{className?: string}> = ({className}) => (
+  <div className={className}   style={{
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

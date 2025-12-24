@@ -1,9 +1,16 @@
 import BlogArticleCard from '../zGeneral/BlogArticleCard';
 import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
+import LoadingAbq from '../zGeneral/LoadingAbq';
+import { HomePageInfo } from './type';
+
+type HomeArea5Props = {
+	homePageArticles: HomePageInfo['home_page_articles'],
+	isLoading: Boolean
+}
 
 
 
-export default function HomeArea5() {
+export default function HomeArea5({homePageArticles, isLoading}: HomeArea5Props) {
 	return (
 		<section className="py-20 px-4 md:px-15">
 			<div className="space-y-6">
@@ -36,24 +43,17 @@ export default function HomeArea5() {
 				</div>
 
 				<div className="grid gap-6 md:grid-cols-3">
-					<BlogArticleCard
-						title="Tendências em arquitetura residencial"
-						image="/home-page/mock/blogMock1.jpg"
-						href="/blog"
-						subtitle="A arquitetura residencial em 2025 promete ser um reflexo da nossa era: tecnológica, sustentável e focada no bem-estar"
-					/>
-					<BlogArticleCard
-						title="Materiais sustentáveis em 2025"
-						image="/home-page/mock/blogMock2.jpg"
-						href="/blog"
-						subtitle='A arquitetura residencial em 2025 promete ser um reflexo da nossa era: tecnológica, sustentável e focada no bem-estar'
-					/>
-					<BlogArticleCard
-						title="Como planejar sua obra"
-						image="/home-page/mock/blogMock3.jpg"
-						href="/blog"
-						subtitle="A arquitetura residencial em 2025 promete ser um reflexo da nossa era: tecnológica, sustentável e focada no bem-estar"
-					/>
+					{isLoading ? <LoadingAbq className="col-span-3" /> : (
+						homePageArticles?.map((article) => (
+							<BlogArticleCard
+								title={article.title}
+								image={article.cover_image_url}
+								href={`/blog/${article.slug}`}
+								subtitle={article.short_description}
+							/>
+
+						))
+					)}
 				</div>
 			</div>
 		</section>

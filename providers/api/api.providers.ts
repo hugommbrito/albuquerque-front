@@ -29,5 +29,18 @@ export class PageContentProvider {
 		return response;
 	}
 
+	static async getHomePageInfo() {
+		const requestUrl = `/home-page-info`;
+
+		const response = await apiController.get(requestUrl)
+			.then((res) => res)
+			.catch((err) => {
+				console.error('Error fetching home page info:', err);
+				return err;
+			});
+
+		return response;
+	}
+
 
 }

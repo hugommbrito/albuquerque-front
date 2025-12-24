@@ -12,7 +12,7 @@ const featuredArticle = {
 };
 
 type HighlightedArticleProps = {
-	featuredArticle: BlogArticleInfo
+	featuredArticle: BlogArticleInfo['article'];
 };
 
 export default function BlogHighlightedArticle({ featuredArticle }: HighlightedArticleProps) {

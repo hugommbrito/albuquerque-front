@@ -4,7 +4,7 @@ export default function BlogHero() {
 			<img
 				src="/blog/backDrop1.png"
 				alt=""
-				className="absolute inset-0 h-full -z-10 hidden md:block"
+				className="absolute inset-0 h-full w-full object-cover -z-10 hidden md:block"
 			/>
 			<img
 				src="/blog/mobileBackDrop1.png"
