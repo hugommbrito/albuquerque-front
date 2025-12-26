@@ -26,6 +26,20 @@ class AxiosController {
     }
 
   }
+
+  async post(url: string, data: any, token: string | null = null) {
+    try {
+      const response = await this.axiosInstance.post(url, data,
+        {
+          headers: token ? { 'Authorization': `Bearer ${token}` } : {}
+        }
+      )
+      return response.data
+    } catch (error) {
+      console.error("POST request error:", error)
+      return null
+    }
+  }
 }
 
 const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000/api';

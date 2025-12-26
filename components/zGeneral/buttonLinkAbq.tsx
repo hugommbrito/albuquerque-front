@@ -13,6 +13,7 @@ interface ButtonAbqProps {
 	hoverBorderColor?: string;
 	hoverBackgroundColor?: string;
 	className?: string;
+	target?: '_blank' | '_self' | '_parent' | '_top';
 }
 
 export default function ButtonLinkAbq({
@@ -28,6 +29,7 @@ export default function ButtonLinkAbq({
 	hoverBorderColor,
 	hoverBackgroundColor,
 	className = '',
+	target = '_self',
 }: ButtonAbqProps) {
 	const baseClasses = fullWidth
 		? 'w-full flex items-center justify-center gap-2 rounded-full px-3 py-4 transition cursor-pointer'
@@ -69,7 +71,7 @@ export default function ButtonLinkAbq({
 		.join(' ');
 
 	return (
-		<Link href={href} className={finalClasses}>
+		<Link href={href} className={finalClasses} target={target}>
 			{text}
 			{icon}
 		</Link>

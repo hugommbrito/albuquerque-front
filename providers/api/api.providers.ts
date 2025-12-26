@@ -42,5 +42,26 @@ export class PageContentProvider {
 		return response;
 	}
 
+	
+	
+}
 
+export class sendEmailProvider {
+	static async EmailMessage(data: {
+		name: string;
+		phone: string;
+		message: string;
+	}) {
+		const requestUrl = `/send-email`;
+	
+		const response = await apiController.post(requestUrl, data)
+			.then((res) => res)
+			.catch((err) => {
+				console.error('Error sending email message:', err);
+				return err;
+			});
+
+		return response;
+	}
+	
 }
