@@ -17,7 +17,7 @@ type HighlightedArticleProps = {
 
 export default function BlogHighlightedArticle({ featuredArticle }: HighlightedArticleProps) {
 	return (
-		<article className="relative overflow-hidden rounded-[48px] h-220 md:h-155 bg-primary text-primary-invert">
+		<article className="relative overflow-hidden rounded-[48px] h-220 md:h-155 bg-primary text-primary-invert" key={featuredArticle.id}>
 			<img
 				src={featuredArticle.cover_image_url}
 				alt={featuredArticle.title}

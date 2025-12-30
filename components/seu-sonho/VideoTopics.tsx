@@ -64,7 +64,7 @@ export default function SeuSonhoVideoTopics() {
 				</div>
 			</div>
 			<div className="rounded-2xl bg-primary px-6 py-4 mt-2 md:flex items-center justify-between space-y-20">
-        <p className="text-white font-500">
+        <p className="text-white font-500 md:my-auto">
 				Prefere ler? Baixe nosso ebook “Como financiar meu sonho” grátis.
         </p>
 				<ButtonLinkAbq 

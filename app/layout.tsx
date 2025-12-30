@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-//TODO: Ajustar Cursor pointer no hover dos botões
+
+import { PageWrapper } from '@/components/layout/PageWrapper'; 
+
 import './globals.css';
 import SiteHeader from '../components/layout/SiteHeader';
 import SiteFooter from '../components/layout/SiteFooter';
+import IntroOverlay from '@/components/layout/IntroMotionOverlay';
 
 const inter = Inter({
 	subsets: ['latin'],
@@ -28,8 +31,11 @@ export default function RootLayout({
 	return (
 		<html lang="pt-BR">
 			<body className={`antialiased ${inter.className}`}>
+				<IntroOverlay />
 				<SiteHeader />
-				<main>{children}</main> {/* CONTEÚDO DA PÁGINA RENDERIZADO AQUI */}
+				{/* <PageWrapper> */}
+					<main>{children}</main> {/* CONTEÚDO DA PÁGINA RENDERIZADO AQUI */}
+				{/* </PageWrapper> */}
 				<SiteFooter />
 			</body>
 		</html>

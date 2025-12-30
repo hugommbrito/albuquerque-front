@@ -13,7 +13,7 @@ export default function NossaHistoriaHero() {
 			/>
 			<div className="flex flex-col justify-around h-full bg-[#E2DFE2] md:bg-transparent px-4 md:px-0 py-10 md:py-0">
 				<div></div>
-				<h1 className="text-44 md:text-96 leading-16 md:leading-25 font-400">
+				<h1 className="text-44 md:text-96 leading-16 md:leading-25 font-400 md:max-w-2/3">
 					Além de moradia, construímos lar.
 				</h1>
 				<span className="text-16 md:text-12 uppercase tracking-widest text-primary mt-20 md:mt-0">
