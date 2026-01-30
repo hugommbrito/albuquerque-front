@@ -24,6 +24,7 @@ export type ProjectInfo = {
 	heroHighLights: ProjectHeroHighlights[];
 	breadcrumb: ProjectBreadcrumb[];
 	location: string;
+	unitsCount: number;
 	status: string;
 	lastUnits: boolean;
 	amenities: ProjectAmenity[];

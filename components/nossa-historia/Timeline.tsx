@@ -1,13 +1,13 @@
 const historyLeft = [
-	{year: 2016, event: 'Primeiro tijolo, início da Consultoria'},
+	{year: 2016, event: 'Início da Consultoria'},
 	{year: 2017, event: 'Especialidade em Patologias de Obras'},
 	{
 		year: 2018,
 		event:
-			'Gestão de obras verticais, implantação de selo PBQPH nível A e ISO 9001, como parceiro base, entregamos junto com o cliente maos de 8.000m2 de área construída',
+			'Gestão de obras verticais, implantação de selo PBQPH nível A e ISO 9001, como parceiro base, entregamos junto com o cliente mais de 8.000m2 de área construída',
 	},
+	{year: 2019, event: 'MBA Gerenciamento Projetos'},
 	{year: 2021, event: 'Especialidade pelo MIT - Portugal'},
-	{year: 2022, event: 'MBA Gerenciamento Projetos'},
 ];
 
 const historyRight = [
@@ -34,7 +34,7 @@ export default function NossaHistoriaTimeline() {
 			<div className="">
 				<div className="max-w-[50ch]">
 					<h3 className="mb-22 text-32 md:text-36 font-500 text-primary leading-tight">
-						Uma reputação que é resultado de muitos anos de construção.
+						Uma reputação que é resultado de muitos anos de trabalho.
 					</h3>
 				</div>
 				<div className="grid gap-10 grid-cols-1 md:grid-cols-2">

@@ -31,7 +31,7 @@ export default function RootLayout({
 	return (
 		<html lang="pt-BR">
 			<body className={`antialiased ${inter.className}`}>
-				<IntroOverlay />
+				{/* <IntroOverlay /> */}
 				<SiteHeader />
 				{/* <PageWrapper> */}
 					<main>{children}</main> {/* CONTEÚDO DA PÁGINA RENDERIZADO AQUI */}

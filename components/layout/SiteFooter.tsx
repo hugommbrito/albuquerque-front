@@ -9,32 +9,32 @@ const FOOTER_NAV_LINKS = [
 ];
 
 const SOCIAL_LINKS = [
-	{
-		label: 'Facebook',
-		href: 'https://www.facebook.com/albuquerque',
-		icon: '/icons/fb.svg',
-	},
+	// {
+	// 	label: 'Facebook',
+	// 	href: 'https://www.facebook.com/albuquerque',
+	// 	icon: '/icons/fb.svg',
+	// },
 	{
 		label: 'Instagram',
-		href: 'https://www.instagram.com/albuquerque',
+		href: 'https://www.instagram.com/albuquerqengenharia',
 		icon: '/icons/ig.svg',
 	},
-	{
-		label: 'YouTube',
-		href: 'https://www.linkedin.com/company/albuquerque',
-		icon: '/icons/yt.svg',
-	},
+	// {
+	// 	label: 'YouTube',
+	// 	href: 'https://www.linkedin.com/company/albuquerque',
+	// 	icon: '/icons/yt.svg',
+	// },
 ];
 
 const CONTACT_SECTIONS = [
 	{
-		title: 'Central de relacionamento',
-		number: '83 3019-0895',
+		title: 'Central de Atendimento',
+		number: '(83) 9 9880-0023',
 	},
-	{
-		title: 'Central de vendas',
-		number: '83 3019-0800',
-	},
+	// {
+	// 	title: 'Central de vendas',
+	// 	number: '83 3019-0800',
+	// },
 ];
 
 export default function SiteFooter() {
@@ -64,9 +64,9 @@ export default function SiteFooter() {
 						Escritório Comercial
 					</p>
 					<p className="font-400 text-primary-invert/80">
-						Rua Sarg. Nicolau Dias de Farias
+						Av. Manoel Tavares, 700
 						<br />
-						567 - Sala 201, Miramar- João Pessoa/PB
+						Loja 108 - Jardim Tavares, Campina Grande - PB
 					</p>
 					<p className="font-800 text-primary-invert/80">Siga-nos</p>
 					<div className="flex items-center gap-10">

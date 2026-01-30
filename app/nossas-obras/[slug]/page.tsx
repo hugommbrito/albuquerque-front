@@ -414,6 +414,8 @@ export default function ProjectDetailPage({
 						amenities={project.amenities}
 						status={project.status}
 						isLastUnits={project.lastUnits}
+						location={project.location}
+						unitsCount={project.unitsCount}
 					/>
 					{project.floorPlans && (
 						<ProjectFloorPlans plans={project.floorPlans} />

@@ -31,7 +31,7 @@ export default function ProjectOutdoorGallery({
 					</button>
 				))}
 			</div>
-			<div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+			<div className="grid gap-4 grid-cols-2 mb-8 md:grid-cols-4">
 				{selectedFloorArea.images.map((image, index) => (
 					<div key={index} className="h-45 md:h-80 rounded-3xl overflow-hidden">
 						<img

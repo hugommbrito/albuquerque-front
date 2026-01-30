@@ -1,19 +1,19 @@
 const stats = [
 	{
-		value: '50',
-		description: 'famílias transformadas',
+		value: '+50',
+		description: 'clientes beneficiados',
 		tone: 'dark',
 		size: 'small',
 	},
 	{
-		value: '+20mil',
-		description: 'metros de área construída',
+		value: '+4mil',
+		description: 'metros quadrados de área construída',
 		tone: 'light',
 		size: 'small',
 	},
 	{
-		value: '+50mil',
-		description: 'metros quadrados entregues como consultoria',
+		value: 'Certificação PBPQ-H',
+		description: 'certificações e métodos modernos de construção',
 		tone: 'light',
 		size: 'large',
 	},
@@ -25,7 +25,7 @@ export default function NossaHistoriaExperienceStats() {
 			<div className="grid gap-10 grid-cols-1 md:grid-cols-2 items-start">
 				<div className="max-w-140">
 					<h2 className="text-32 md:text-48 mb-12">
-						20 anos de experiência em gestão & construção
+						10 anos de experiência em gestão & construção
 					</h2>
 					<p className="text-24 md:text-18 text-primary-3 mb-10 ">
 						Você sabe quando ama a sua vocação quando transforma  aquilo em algo
@@ -34,7 +34,7 @@ export default function NossaHistoriaExperienceStats() {
 					<p className="text-24 md:text-18 text-primary-3">
 						A Albuquerque engenharia tem as suas raízes no universo da
 						consultoria em construções, onde através de técnicas, especialidade,
-						e kowhow, ajudamos empresas à darem vida de forma a suas ideias. 
+						e kowhow, ajudamos empresas à darem vida e forma a suas ideias. 
 					</p>
 				</div>
 				<div className="grid grid-cols-2 gap-4">

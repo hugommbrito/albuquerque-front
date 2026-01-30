@@ -5,7 +5,6 @@ import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
 export default function HomeArea1() {
 	return (
 		<div className="relative overflow-hidden h-230 md:h-auto">
-			{/*//TODO: Adicionar gradiente com casal na frente*/}
 			<div className="absolute z-30 w-180 top-1/2 left-15 right-15 transform -translate-y-1/2 hidden md:block">
 				<p className="font-inter font-500 text-48 text-primary">
 					Estamos por trás de cada sonho que se torna realidade

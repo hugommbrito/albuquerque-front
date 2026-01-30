@@ -1,8 +1,12 @@
+'use client'
+
+import { CaretRightIcon } from '@phosphor-icons/react';
 import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
+import { useMemo } from 'react';
 
 const financingBadges = [
   {
-    logo: '/seu-sonho/financancialLogo/minhaCasaminhaVida.png',
+    logo: '/seu-sonho/financancialLogo/mcmv.png',
     text: 'Minha casa minha vida',
   },
   {
@@ -16,8 +20,16 @@ const financingBadges = [
 ]
 
 export default function SeuSonhoFinancingCta() {
+    const finalWhatsAppUrl = useMemo(() => {
+      let whatsAppBaseUrl = 'https://wa.me/';
+      let message = 'Olá, gostaria de mais informações sobre o financiamento do meu sonho!';
+      let encodedMessage = encodeURIComponent(message);
+      let phoneNumber = '5583998800023'; 
+      return `${whatsAppBaseUrl}${phoneNumber}/?text=${encodedMessage}`;
+    }, [])
+    
 	return (
-		<section className="relative text-primary-invert bg-primary -z-20">
+		<section className="relative text-primary-invert bg-primary z-20">
       <img src="/seu-sonho/backDrop2.png" alt="" className="absolute inset-0 w-full h-full object-cover -z-10 hidden md:block" />
       <img src="/seu-sonho/mobileBackDrop-1.png" alt="" className="w-full h-full object-cover -z-10 md:hidden" />
 			<div className="mx-4 md:mx-15 py-10 md:py-32 grid grid-cols-1 md:grid-cols-2 items-center">
@@ -39,16 +51,32 @@ export default function SeuSonhoFinancingCta() {
 							{badge.text}
 						</div>
 					))}
-				</div>
-          <ButtonLinkAbq
-            href="/contato"
-            text="Fazer simulações"
-            variant="filled"
-            backgroundColor='bg-primary-invert'
-            textColor='text-primary font-500 font-16'
-          />
-				</div>
+				<div className="space-y-4 max-w-md">
+					<ButtonLinkAbq
+						href="https://www8.caixa.gov.br/siopiinternet-web/simulaOperacaoInternet.do?method=inicializarCasoUso"
+						target='_blank'
+						text="Iniciar simulação"
+						variant="filled"
+						icon={<CaretRightIcon />}
+						backgroundColor="bg-primary-invert border-primary-invert"
+						textColor="text-primary"
+						fullWidth
+					/>
+					<ButtonLinkAbq
+						href={finalWhatsAppUrl}
+						target='_blank'
+						text="Fale com nossos atendentes"
+						variant="outline"
+						icon={<CaretRightIcon />}
+						hoverBackgroundColor="hover:bg-primary hover:border-primary-invert"
+						textColor="text-primary-invert hover:text-primary-5"
+						backgroundColor='bg-primary-4 border-primary-4'
+						fullWidth
+					/>
+         </div>
+        </div> 
+        </div>
 			</div>
 		</section>
-	);
+	)
 }

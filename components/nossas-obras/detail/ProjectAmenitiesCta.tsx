@@ -9,12 +9,16 @@ type ProjectAmenitiesCtaProps = {
 	amenities: ProjectAmenity[];
 	isLastUnits: boolean
 	status: string
+	location: string
+	unitsCount: number
 };
 
 export default function ProjectAmenitiesCta({
 	amenities,
 	status,
 	isLastUnits,
+	location,
+	unitsCount
 }: ProjectAmenitiesCtaProps) {
 	return (
 		<section className="px-4 md:px-15 py-20 bg-primary-invert">
@@ -27,7 +31,7 @@ export default function ProjectAmenitiesCta({
 				<div className="grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-4">
 					<div className="h-30 flex flex-col justify-between rounded-3xl border border-primary/10 bg-primary-5 px-4 py-5">
 						<PhosporIcons.MapPinIcon size={32} color=''/>
-						<p className="text-20 font-500 text-primary mt-2">Miramar</p>
+						<p className="text-20 font-500 text-primary mt-2">{location}</p>
 					</div>
 					<div className="h-30 flex flex-col justify-between md:col-span-2 rounded-3xl border border-primary/10 bg-white px-4 py-5">
 						<p className="text-12 uppercase tracking-wide text-primary-3">
@@ -39,7 +43,7 @@ export default function ProjectAmenitiesCta({
 						<p className="text-12 uppercase tracking-wide text-primary-3">
 							Unidades
 						</p>
-						<p className="text-52 font-500 text-primary mt-2">28</p>
+						<p className="text-52 font-500 text-primary mt-2">{unitsCount}</p>
 					</div>
 					{amenities.map((item) => (
 						<div
@@ -67,7 +71,7 @@ export default function ProjectAmenitiesCta({
 								}
 							</div>
 							<ButtonLinkAbq
-								href="/contato"
+								href="/home"
 								text="Fale conosco"
 								variant="filled"
 								icon={<PhosporIcons.ArrowUpRightIcon />}
