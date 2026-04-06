@@ -13,7 +13,7 @@ type IApiResponse = {
 	isSuccess: boolean | undefined;
 };
 
-export default function HomeArea6() {
+export default function HomeContact() {
 	const [name, setName] = useState<string>('');
 	const [nameError, setNameError] = useState<IErrorStatus>({
 		message: null,

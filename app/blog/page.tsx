@@ -37,7 +37,10 @@ export default function BlogPage() {
 
 	return (
 		<div className="text-primary">
-			<BlogHero />
+			<BlogHero
+				desktopCoverImageUrl={ArticlesInfo?.desktop_cover_image_url ?? ''}
+				mobileCoverImageUrl={ArticlesInfo?.mobile_cover_image_url ?? ''}
+			/>
 			<main className="px-4 py-8 md:p-18 mx-auto space-y-16" key={'blog-main'+(ArticlesInfo ? '-loaded' : '-loading')}>
 				{isLoading ? (
 					<LoadingAbq />

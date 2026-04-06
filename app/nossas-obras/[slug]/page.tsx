@@ -1,6 +1,6 @@
 'use client';
 
-import HomeArea6 from '@/components/home/area6';
+import HomeContact from '@/components/home/HomeContact';
 import ProjectAmenitiesCta from '@/components/nossas-obras/detail/ProjectAmenitiesCta';
 import ProjectContactForm from '@/components/nossas-obras/detail/ProjectContactForm';
 import ProjectFinancing from '@/components/nossas-obras/detail/ProjectFinancing';
@@ -429,7 +429,7 @@ export default function ProjectDetailPage({
 				</>
 			)}
 			<SeuSonhoFinancingCta />
-			<HomeArea6 />
+			<HomeContact />
 		</>
 	);
 }

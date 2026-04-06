@@ -21,4 +21,6 @@ export type BlogArticleInfo = {
 export type BlogPageInfo = {
 	highlighted_articles: BlogArticleInfo['article'][];
 	regular_articles: BlogArticleInfo['article'][];
+	desktop_cover_image_url: string;
+	mobile_cover_image_url: string;
 };

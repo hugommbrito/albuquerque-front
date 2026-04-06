@@ -42,8 +42,34 @@ export class PageContentProvider {
 		return response;
 	}
 
-	
-	
+	static async getNossaHistoriaPageInfo() {
+		const requestUrl = `/about-us`;
+
+		const response = await apiController.get(requestUrl)
+			.then((res) => res)
+			.catch((err) => {
+				console.error('Error fetching nossa historia page info:', err);
+				return err;
+			});
+
+		return response;
+	}
+
+	static async getSeuSonhoPageInfo() {
+		const requestUrl = `/your-dreams`;
+
+		const response = await apiController.get(requestUrl)
+			.then((res) => res)
+			.catch((err) => {
+				console.error('Error fetching seu sonho page info:', err);
+				return err;
+			});
+
+		return response;
+	}
+
+
+
 }
 
 export class sendEmailProvider {

@@ -1,16 +1,55 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 
-import { PageWrapper } from '@/components/layout/PageWrapper'; 
-
+import { PageWrapper } from '@/components/layout/PageWrapper';
 import './globals.css';
 import SiteHeader from '../components/layout/SiteHeader';
 import SiteFooter from '../components/layout/SiteFooter';
 import IntroOverlay from '@/components/layout/IntroMotionOverlay';
 
-const inter = Inter({
-	subsets: ['latin'],
-	weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+const helverticaLocal = localFont({
+	src: [
+		{
+			path: '../public/fonts/helvertica/HelveticaNeueThin.otf',
+			weight: '100',
+			style: 'normal',
+		},
+		{
+			path: '../public/fonts/helvertica/HelveticaNeueUltraLight.otf',
+			weight: '200',
+			style: 'normal',
+		},
+		{
+			path: '../public/fonts/helvertica/HelveticaNeueLight.otf',
+			weight: '300',
+			style: 'normal',
+		},
+		{
+			path: '../public/fonts/helvertica/HelveticaNeueRoman.otf',
+			weight: '400',
+			style: 'normal',
+		},
+		{
+			path: '../public/fonts/helvertica/HelveticaNeueMedium.otf',
+			weight: '500',
+			style: 'normal',
+		},
+		{
+			path: '../public/fonts/helvertica/HelveticaNeueBold.otf',
+			weight: '700',
+			style: 'normal',
+		},
+		{
+			path: '../public/fonts/helvertica/HelveticaNeueHeavy.otf',
+			weight: '800',
+			style: 'normal',
+		},
+		{
+			path: '../public/fonts/helvertica/HelveticaNeueBlack.otf',
+			weight: '900',
+			style: 'normal',
+		},
+	],
 	display: 'swap',
 });
 
@@ -30,11 +69,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="pt-BR">
-			<body className={`antialiased ${inter.className}`}>
+			<body className={`antialiased ${helverticaLocal}`}>
 				{/* <IntroOverlay /> */}
 				<SiteHeader />
 				{/* <PageWrapper> */}
-					<main>{children}</main> {/* CONTEÚDO DA PÁGINA RENDERIZADO AQUI */}
+				<main>{children}</main> {/* CONTEÚDO DA PÁGINA RENDERIZADO AQUI */}
 				{/* </PageWrapper> */}
 				<SiteFooter />
 			</body>

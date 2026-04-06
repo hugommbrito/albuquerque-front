@@ -1,6 +1,6 @@
 import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
 
-export default function HomeArea2() {
+export default function HomeAbout() {
 	return (
 		<section className="py-22 md:py-40 px-4 md:px-15">
 			<div className=" grid gap-10 md:grid-cols-[1.5fr_1fr] items-start">

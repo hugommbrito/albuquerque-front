@@ -1,5 +1,7 @@
 export type CategoriesPageInfo = {
 	categories: VentureCategoryInfo[];
+	desktop_cover_image_url: string;
+	mobile_cover_image_url: string;
 };
 
 export type VentureCategoryInfo = {

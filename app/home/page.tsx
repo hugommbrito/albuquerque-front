@@ -1,14 +1,15 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import HomeArea1 from '../../components/home/area1';
-import HomeArea2 from '../../components/home/area2';
-import HomeArea3 from '../../components/home/area3';
-import HomeArea4 from '../../components/home/area4';
-import HomeArea5 from '../../components/home/area5';
-import HomeArea6 from '../../components/home/area6';
+import HomeHero from '../../components/home/HomeHero';
+import HomeAbout from '../../components/home/HomeAbout';
+import HomeCtaBanner from '../../components/home/HomeCtaBanner';
+import HomeVentures from '../../components/home/HomeVentures';
+import HomeBlog from '../../components/home/HomeBlog';
+import HomeContact from '../../components/home/HomeContact';
 import { HomePageInfo } from '@/components/home/type';
 import { PageContentProvider } from '@/providers/api/api.providers';
+import HomeCoverImage from '@/components/home/HomeCoverImage';
 
 export default function Home() {
 	const [homePageInfo, setHomePageInfo] = useState<HomePageInfo | undefined>(undefined)
@@ -34,18 +35,19 @@ export default function Home() {
 	
 	return (
 		<>
-			<HomeArea1 />
-			<HomeArea2 />
-			<HomeArea3 />
-			<HomeArea4
+			<HomeCoverImage desktopCoverImageUrl={homePageInfo?.desktop_cover_image_url || ''} mobileCoverImageUrl={homePageInfo?.mobile_cover_image_url || ''} />
+			{/* <HomeHero /> */}
+			{/* <HomeAbout /> */}
+			{/* <HomeCtaBanner /> */}
+			<HomeVentures
 				homePageVentures={homePageInfo?.home_page_ventures}
 				isLoading={isLoading}
 			/>
-			<HomeArea5 
+			<HomeBlog
 				homePageArticles={homePageInfo?.home_page_articles}
 				isLoading={isLoading}
 			/>
-			<HomeArea6 />
+			<HomeContact />
 		</>
 	);
 }

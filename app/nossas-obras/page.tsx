@@ -43,7 +43,10 @@ export default function NossasObras() {
 
 	return (
 		<>
-			<NossasObrasHero />
+			<NossasObrasHero
+				desktopCoverImageUrl={categoriesInfo?.desktop_cover_image_url ?? ''}
+				mobileCoverImageUrl={categoriesInfo?.mobile_cover_image_url ?? ''}
+			/>
 			<NossasObrasHeadline />
 			{isLoading ? (
 				<LoadingAbq />

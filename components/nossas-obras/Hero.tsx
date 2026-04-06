@@ -1,14 +1,19 @@
-export default function NossasObrasHero() {
+type NossasObrasHeroProps = {
+	desktopCoverImageUrl: string;
+	mobileCoverImageUrl: string;
+};
+
+export default function NossasObrasHero({ desktopCoverImageUrl, mobileCoverImageUrl }: NossasObrasHeroProps) {
 	return (
 		<section className="h-svh md:h-180 relative  text-primary-invert bg-primary -z-20">
 			<div className="mx-4 md:mx-15 grid grid-cols-1 md:grid-cols-2 items-center h-full">
 				<img
-					src="/nossas-obras/backDrop1.svg"
+					src={desktopCoverImageUrl}
 					alt="Ilustração de empreendimentos"
 					className="absolute inset-0 -z-10 w-full h-full object-cover hidden md:block"
 				/>
 				<img
-					src="/nossas-obras/mobileBackDrop-1.png"
+					src={mobileCoverImageUrl}
 					alt="Ilustração de empreendimentos"
 					className="md:absolute inset-0 -z-10 w-full h-full object-cover md:hidden"
 				/>

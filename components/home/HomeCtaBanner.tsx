@@ -1,6 +1,6 @@
 import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
 
-export default function HomeArea3() {
+export default function HomeCtaBanner() {
 	return (
 		<section className="md:relative">
 			<img src="/home-page/backDrop2.svg" alt="" className="w-full hidden md:block" />

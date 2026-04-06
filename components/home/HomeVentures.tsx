@@ -11,7 +11,7 @@ type HomeArea4Props = {
 	isLoading: Boolean
 }
 
-export default function HomeArea4({homePageVentures, isLoading}: HomeArea4Props) {
+export default function HomeVentures({homePageVentures, isLoading}: HomeArea4Props) {
 	return (
 		<section className="py-20 px-4 md:px-15">
 			<h2 className="text-32 md:text-48 font-400 text-center">
