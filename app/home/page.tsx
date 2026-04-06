@@ -10,6 +10,7 @@ import HomeContact from '../../components/home/HomeContact';
 import { HomePageInfo } from '@/components/home/type';
 import { PageContentProvider } from '@/providers/api/api.providers';
 import HomeCoverImage from '@/components/home/HomeCoverImage';
+import SeuSonhoVideoTopics from '@/components/seu-sonho/VideoTopics';
 
 export default function Home() {
 	const [homePageInfo, setHomePageInfo] = useState<HomePageInfo | undefined>(undefined)
@@ -43,6 +44,7 @@ export default function Home() {
 				homePageVentures={homePageInfo?.home_page_ventures}
 				isLoading={isLoading}
 			/>
+			<SeuSonhoVideoTopics videoTopics={homePageInfo?.instructional_videos || []} />
 			<HomeBlog
 				homePageArticles={homePageInfo?.home_page_articles}
 				isLoading={isLoading}

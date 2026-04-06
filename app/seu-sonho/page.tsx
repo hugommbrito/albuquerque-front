@@ -31,7 +31,7 @@ export default function SeuSonho() {
 				desktopCoverImageUrl={pageInfo?.desktop_cover_image_url ?? ''}
 				mobileCoverImageUrl={pageInfo?.mobile_cover_image_url ?? ''}
 			/>
-			<SeuSonhoVideoTopics />
+			<SeuSonhoVideoTopics videoTopics={pageInfo?.instructional_videos ?? []}/>
 			<SeuSonhoFinancingCta />
 		</>
 	);
