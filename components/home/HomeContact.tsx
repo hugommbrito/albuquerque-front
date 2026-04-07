@@ -1,3 +1,5 @@
+'use client';
+
 import Page from '@/app/page';
 import { sendEmailProvider } from '@/providers/api/api.providers';
 import { FormEvent, useEffect, useState } from 'react';

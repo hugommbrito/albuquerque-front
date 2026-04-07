@@ -1,3 +1,5 @@
+'use client';
+
 import * as PhosphorIcons from '@phosphor-icons/react';
 import { PhosphorIconName } from '../nossas-obras/detail/types';
 import { ComponentType } from 'react';

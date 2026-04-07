@@ -11,7 +11,7 @@ function getYoutubeEmbedUrl(url: string): string {
 	return videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1` : url;
 }
 
-export default function SeuSonhoVideoTopics({videoTopics}: {videoTopics: VideoTopic[]}) {
+export default function SeuSonhoVideoTopics({videoTopics, ebookUrl}: {videoTopics: VideoTopic[], ebookUrl: string}) {
 	const [activeUrl, setActiveUrl] = useState<string | null>(null);
 
 	return (
@@ -55,7 +55,8 @@ export default function SeuSonhoVideoTopics({videoTopics}: {videoTopics: VideoTo
 				Prefere ler? Baixe nosso ebook "Como financiar meu sonho" grátis.
         </p>
 				<ButtonLinkAbq
-          href="#"
+          href={ebookUrl}
+					target="_blank"
           text="Baixar"
           backgroundColor="bg-primary-invert"
           icon={<img src='/icons/downloadIcon.svg' alt="Ícone de download" />}

@@ -1,10 +1,12 @@
+'use client';
+
 import { useMemo } from 'react';
 import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
 import Card from '../zGeneral/Card';
-import { CategoriesPageInfo, VentureCategoryInfo } from './types';
+import { VentureStatusInfo } from './types';
 
 type GenericCategoryProps = {
-	category: VentureCategoryInfo;
+	category: VentureStatusInfo;
 	colorInvert?: boolean;
 };
 
@@ -42,7 +44,7 @@ export default function GenericCategory({
 							className=""
 							href={`/nossas-obras/${residence.slug}`}
 							location={residence.location}
-							status={residence.status}
+							status={category.name}
 							units={residence.total_units}
 							width={category.ventures.length % 2 === 1 && index === category.ventures.length - 1 ? 'full' : 'single'}
 						/>
