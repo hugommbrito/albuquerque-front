@@ -20,7 +20,7 @@ export default function HomeCoverImage({ desktopCoverImageUrl, mobileCoverImageU
 				src={mobileCoverImageUrl}
 				alt=""
 				aria-hidden="true"
-				className="object-cover absolute bottom-0 max-w-none z-10 md:hidden "
+				className="w-full absolute bottom-0 max-w-none z-10 md:hidden "
 			/>
 		</div>
 	);
