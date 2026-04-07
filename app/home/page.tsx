@@ -1,53 +1,31 @@
-'use client'
-
-import { useEffect, useState } from 'react';
-import HomeHero from '../../components/home/HomeHero';
-import HomeAbout from '../../components/home/HomeAbout';
-import HomeCtaBanner from '../../components/home/HomeCtaBanner';
+import HomeContact from '../../components/home/HomeContact';
 import HomeVentures from '../../components/home/HomeVentures';
 import HomeBlog from '../../components/home/HomeBlog';
-import HomeContact from '../../components/home/HomeContact';
 import { HomePageInfo } from '@/components/home/type';
 import { PageContentProvider } from '@/providers/api/api.providers';
 import HomeCoverImage from '@/components/home/HomeCoverImage';
 import SeuSonhoVideoTopics from '@/components/seu-sonho/VideoTopics';
 
-export default function Home() {
-	const [homePageInfo, setHomePageInfo] = useState<HomePageInfo | undefined>(undefined)
-	const [isLoading, setIsLoading] = useState<Boolean>(true)
-	
-	useEffect(() => {
-		setIsLoading(true)
-		async function fetchHomePageInfo() {
-			const response = await PageContentProvider.getHomePageInfo()
+export default async function Home() {
+	const homePageInfo = await PageContentProvider.getHomePageInfo() as HomePageInfo | null;
 
-			if(response instanceof Error) {
-				console.error('Error fetching home page info:', response)
-				setIsLoading(false)
-			} else {
-				setHomePageInfo(response as HomePageInfo)
-				setIsLoading(false)
-			}
-		}
-		fetchHomePageInfo()
-
-		return () => {};
-	}, [])
-	
 	return (
 		<>
-			<HomeCoverImage desktopCoverImageUrl={homePageInfo?.desktop_cover_image_url || ''} mobileCoverImageUrl={homePageInfo?.mobile_cover_image_url || ''} />
-			{/* <HomeHero /> */}
-			{/* <HomeAbout /> */}
-			{/* <HomeCtaBanner /> */}
+			<HomeCoverImage
+				desktopCoverImageUrl={homePageInfo?.desktop_cover_image_url || ''}
+				mobileCoverImageUrl={homePageInfo?.mobile_cover_image_url || ''}
+			/>
 			<HomeVentures
 				homePageVentures={homePageInfo?.home_page_ventures}
-				isLoading={isLoading}
+				isLoading={false}
 			/>
-			<SeuSonhoVideoTopics videoTopics={homePageInfo?.instructional_videos || []} />
+			<SeuSonhoVideoTopics
+				videoTopics={homePageInfo?.instructional_videos || []}
+				ebookUrl={homePageInfo?.ebook_url || ''}
+			/>
 			<HomeBlog
 				homePageArticles={homePageInfo?.home_page_articles}
-				isLoading={isLoading}
+				isLoading={false}
 			/>
 			<HomeContact />
 		</>

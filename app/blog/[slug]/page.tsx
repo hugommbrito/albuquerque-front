@@ -1,12 +1,9 @@
-'use client';
-
 import Link from 'next/link';
+import { CaretLeftIcon } from '@phosphor-icons/react/dist/ssr';
 import BlogArticleCard from '@/components/zGeneral/BlogArticleCard';
-import { CaretLeftIcon } from '@phosphor-icons/react';
-import { useEffect, useState } from 'react';
 import { BlogArticleInfo } from '@/components/blog/types';
 import { PageContentProvider } from '@/providers/api/api.providers';
-import LoadingAbq from '@/components/zGeneral/LoadingAbq';
+import { fetchOrNotFound } from '@/providers/fetchOrNotFound';
 
 // const article = {
 // 	slug: 'tendencias-em-arquitetura-residencial',
@@ -108,98 +105,56 @@ import LoadingAbq from '@/components/zGeneral/LoadingAbq';
 // 	},
 // ];
 
-const shareLinks = [
-	{ label: 'Instagram', href: '#', icon: '/icons/ig.svg' },
-	{ label: 'Facebook', href: '#', icon: '/icons/fb.svg' },
-	{ label: 'WhatsApp', href: '#', icon: '/icons/wa.svg' },
-];
-
 // export async function generateStaticParams() {
 // 	return [{ slug: article.slug }];
 // }
 
-type BlogArticlePageProps = {
-	params: { 
-		slug: string,
-		additionalArticles: BlogArticleInfo[]
-	};
-};
+export default async function BlogArticlePage({
+	params,
+}: {
+	params: Promise<{ slug: string }>;
+}) {
+	const { slug } = await params;
 
-export default function BlogArticlePage({ params }: BlogArticlePageProps) {
-	const [ArticleInfo, setArticleInfo] = useState<BlogArticleInfo['article'] | undefined>(
-		undefined
-	)
-	const [suggestedArticles, setSuggestedArticles] = useState<BlogArticleInfo['suggested_articles'] | undefined>(
-		undefined
-	)
-	const [isLoading, setIsLoading] = useState<boolean>(true)
-	const [isNotFound, setIsNotFound] = useState<boolean>(false)
+	const response = await fetchOrNotFound(() =>
+		PageContentProvider.getBlogArticles(slug)
+	) as BlogArticleInfo;
 
-	useEffect(() => {
-		setIsLoading(true);
-		async function fetchArticlesInfo() {
-			const response = await PageContentProvider.getBlogArticles(params.slug)
-
-			if (response instanceof Error) {
-				console.error('Error fetching blog articles: ', response)
-				setIsLoading(false);
-				setIsNotFound(true);
-			} else {
-				setArticleInfo(response.article as BlogArticleInfo['article'])
-				setSuggestedArticles(response.suggested_articles as BlogArticleInfo['suggested_articles'])
-				setIsLoading(false);
-			}
-		}
-		fetchArticlesInfo();
-
-		return () => {};
-	}, []);
-
-	if (isNotFound) {
-		return (
-			<div className="py-32 text-center text-primary">
-				Artigo não encontrado.
-			</div>
-		);
-	}
+	const ArticleInfo = response.article;
+	const suggestedArticles = response.suggested_articles;
 
 	return (
 		<div className="bg-primary-invert">
-			{isLoading ? (
-				<LoadingAbq />
-			) : (
-				<>
-					<section className="px-4 md:px-15 py-42">
-						<div className="space-y-10">
-							<div className="flex items-center gap-3 text-14 text-primary-3">
-								<Link
-									href="/blog"
-									className="inline-flex items-center gap-2 hover:text-primary"
-								>
-									<CaretLeftIcon />
-									Blog
-								</Link>
-							</div>
+			<section className="px-4 md:px-15 py-42">
+				<div className="space-y-10">
+					<div className="flex items-center gap-3 text-14 text-primary-3">
+						<Link
+							href="/blog"
+							className="inline-flex items-center gap-2 hover:text-primary"
+						>
+							<CaretLeftIcon />
+							Blog
+						</Link>
+					</div>
 
-							<h1 className="md:w-2/5 text-32 md:text-48 font-500 text-primary leading-tight">
-								{ArticleInfo?.title}
-							</h1>
+					<h1 className="md:w-2/5 text-32 md:text-48 font-500 text-primary leading-tight">
+						{ArticleInfo?.title}
+					</h1>
 
-							<div className="relative h-150 overflow-hidden rounded-3xl">
-								<div className="absolute h-full w-full bottom-0 bg-gradient-to-t from-primary via-primary/35 to-transparent" />
-								<img
-									src={ArticleInfo?.cover_image_url}
-									alt="Fachada contemporânea"
-									className="h-full w-full object-cover"
-								/>
-							</div>
-							<article className="md:w-1/2 md:min-w-[550px] mx-auto space-y-6 text-18 leading-9 text-primary-2">
-								<div
-									className=" "
-									dangerouslySetInnerHTML={{ __html: ArticleInfo?.content! }}
-								/>
-								{/* TODO: create share links component and logics */}
-								{/* <div className="border-t border-primary/10 pt-8 hidden md:block">
+					<div className="relative h-150 overflow-hidden rounded-3xl">
+						<div className="absolute h-full w-full bottom-0 bg-gradient-to-t from-primary via-primary/35 to-transparent" />
+						<img
+							src={ArticleInfo?.cover_image_url}
+							alt="Fachada contemporânea"
+							className="h-full w-full object-cover"
+						/>
+					</div>
+					<article className="md:w-1/2 md:min-w-[550px] mx-auto space-y-6 text-18 leading-9 text-primary-2">
+						<div
+							dangerouslySetInnerHTML={{ __html: ArticleInfo?.content! }}
+						/>
+						{/* TODO: create share links component and logics */}
+						{/* <div className="border-t border-primary/10 pt-8 hidden md:block">
 							<h3 className="text-16 font-500 uppercase tracking-[0.2em] text-primary-3">
 								Compartilhar
 							</h3>
@@ -215,45 +170,43 @@ export default function BlogArticlePage({ params }: BlogArticlePageProps) {
 								))}
 							</div>
 						</div> */}
-							</article>
-						</div>
-					</section>
+					</article>
+				</div>
+			</section>
 
-					<section className="bg-primary-5 px-15 py-16 hidden md:block">
-						<div className="space-y-10">
-							<div className="flex flex-wrap items-center justify-between gap-6">
-								<div className="space-y-2">
-									<p className="text-14 uppercase tracking-[0.2em] text-primary-3">
-										Outros artigos
-									</p>
-									<h2 className="text-28 font-500 text-primary">
-										Conteúdos que você também pode gostar
-									</h2>
-								</div>
-								<Link
-									href="/blog"
-									className="inline-flex items-center gap-2 text-16 font-500 text-primary underline-offset-4 hover:underline"
-								>
-									Ver todos
-									<span className="text-18">→</span>
-								</Link>
-							</div>
-
-							<div className="grid gap-8 grid-cols-3">
-								{suggestedArticles?.map((item) => (
-									<BlogArticleCard
-										key={item.id}
-										title={item.title}
-										subtitle={item.short_description}
-										image={item.cover_image_url}
-										href={`/blog/${item.slug}`}
-									/>
-								))}
-							</div>
+			<section className="bg-primary-5 px-15 py-16 hidden md:block">
+				<div className="space-y-10">
+					<div className="flex flex-wrap items-center justify-between gap-6">
+						<div className="space-y-2">
+							<p className="text-14 uppercase tracking-[0.2em] text-primary-3">
+								Outros artigos
+							</p>
+							<h2 className="text-28 font-500 text-primary">
+								Conteúdos que você também pode gostar
+							</h2>
 						</div>
-					</section>
-				</>
-			)}
+						<Link
+							href="/blog"
+							className="inline-flex items-center gap-2 text-16 font-500 text-primary underline-offset-4 hover:underline"
+						>
+							Ver todos
+							<span className="text-18">→</span>
+						</Link>
+					</div>
+
+					<div className="grid gap-8 grid-cols-3">
+						{suggestedArticles?.map((item) => (
+							<BlogArticleCard
+								key={item.id}
+								title={item.title}
+								subtitle={item.short_description}
+								image={item.cover_image_url}
+								href={`/blog/${item.slug}`}
+							/>
+						))}
+					</div>
+				</div>
+			</section>
 		</div>
 	);
 }

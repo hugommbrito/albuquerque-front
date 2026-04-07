@@ -1,5 +1,4 @@
-'use client';
-
+import { notFound } from 'next/navigation';
 import HomeContact from '@/components/home/HomeContact';
 import ProjectAmenitiesCta from '@/components/nossas-obras/detail/ProjectAmenitiesCta';
 import ProjectContactForm from '@/components/nossas-obras/detail/ProjectContactForm';
@@ -8,16 +7,10 @@ import ProjectFloorPlans from '@/components/nossas-obras/detail/ProjectFloorPlan
 import ProjectGallery from '@/components/nossas-obras/detail/ProjectGallery';
 import ProjectHero from '@/components/nossas-obras/detail/ProjectHero';
 import ProjectOutdoorGallery from '@/components/nossas-obras/detail/ProjectOutdoorGallery';
-import {
-	ProjectFloorPlan,
-	ProjectGalleryData,
-	ProjectInfo,
-} from '@/components/nossas-obras/detail/types';
+import { ProjectInfo } from '@/components/nossas-obras/detail/types';
 import SeuSonhoFinancingCta from '@/components/seu-sonho/FinancingCta';
-import LoadingAbq from '@/components/zGeneral/LoadingAbq';
 import { PageContentProvider } from '@/providers/api/api.providers';
-import * as PhosporIcons from '@phosphor-icons/react';
-import { use, useEffect, useState } from 'react';
+import { fetchOrNotFound } from '@/providers/fetchOrNotFound';
 
 // const project = JSON.parse(importedProject) as ProjectInfo;
 
@@ -360,73 +353,41 @@ import { use, useEffect, useState } from 'react';
 // 	return [{ slug: project.slug }];
 // }
 
-export default function ProjectDetailPage({
+export default async function ProjectDetailPage({
 	params,
 }: {
 	params: Promise<{ slug: string }>;
 }) {
-	const { slug } = use(params);
+	const { slug } = await params;
 
-	const [project, setProject] = useState<ProjectInfo | undefined>(undefined);
-	const [isLoading, setIsLoading] = useState<boolean>(true);
+	const project = await fetchOrNotFound(() =>
+		PageContentProvider.getVentureInfo(slug)
+	) as ProjectInfo;
 
-	useEffect(() => {
-		setIsLoading(true);
-		async function fetchProject() {
-			const response = await PageContentProvider.getVentureInfo(slug);
+	if (project.slug !== slug) notFound();
 
-			if (response instanceof Error) {
-				console.error('Error fetching project:', response);
-				setIsLoading(false);
-			} else {
-				console.log('Fetched project:', response);
-				setProject(response as ProjectInfo);
-				setIsLoading(false);
-			}
-		}
-		fetchProject();
-
-		return () => {};
-	}, [slug]);
-
-	if (slug !== project?.slug && !isLoading) {
-		return (
-			<div className="py-32 text-center text-primary">
-				Empreendimento não encontrado.
-			</div>
-		);
-	}
 	return (
 		<>
-			{isLoading && (
-				<div className="h-[100vh] text-center text-80 mt-40 text-primary-invert">
-					<LoadingAbq />
-				</div>
+			<ProjectHero project={project} />
+			<ProjectGallery
+				highlightsGallery={project.galeries.highlighted}
+				breadcrumbs={project.breadcrumb}
+			/>
+			<ProjectAmenitiesCta
+				amenities={project.amenities}
+				status={project.status}
+				isLastUnits={project.lastUnits}
+				location={project.location}
+				unitsCount={project.unitsCount}
+			/>
+			{project.floorPlans && (
+				<ProjectFloorPlans plans={project.floorPlans} />
 			)}
-			{!isLoading && project && (
-				<>
-					<ProjectHero project={project} />
-					<ProjectGallery
-						highlightsGallery={project.galeries.highlighted}
-						breadcrumbs={project.breadcrumb}
-					/>
-					<ProjectAmenitiesCta
-						amenities={project.amenities}
-						status={project.status}
-						isLastUnits={project.lastUnits}
-						location={project.location}
-						unitsCount={project.unitsCount}
-					/>
-					{project.floorPlans && (
-						<ProjectFloorPlans plans={project.floorPlans} />
-					)}
-					{project.galeries.areas.length > 0 && (
-						<ProjectOutdoorGallery
-							areas={project.galeries.areas}
-							ytVideoId={project.ytVideoId}
-						/>
-					)}
-				</>
+			{project.galeries.areas.length > 0 && (
+				<ProjectOutdoorGallery
+					areas={project.galeries.areas}
+					ytVideoId={project.ytVideoId}
+				/>
 			)}
 			<SeuSonhoFinancingCta />
 			<HomeContact />
