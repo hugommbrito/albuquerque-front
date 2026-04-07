@@ -16,6 +16,7 @@ export type VentureStatusInfo = {
 			location: string;
 			total_units: string;
 			hero_image_url: string;
+			status: string;
 		}
 	];
 }
