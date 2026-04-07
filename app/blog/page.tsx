@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import BlogRegularArticlesList from '../../components/blog/ArticleList';
 import BlogHighlightedArticle from '../../components/blog/HighlightedArticle';
 import BlogHero from '../../components/blog/Hero';

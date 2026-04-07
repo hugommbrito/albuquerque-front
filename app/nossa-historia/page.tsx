@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import NossaHistoriaExperienceStats from '../../components/nossa-historia/ExperienceStats';
 import NossaHistoriaFeaturedImage from '../../components/nossa-historia/FeaturedImage';
 import NossaHistoriaHero from '../../components/nossa-historia/Hero';

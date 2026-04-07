@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import HomeContact from '../../components/home/HomeContact';
 import HomeVentures from '../../components/home/HomeVentures';
 import HomeBlog from '../../components/home/HomeBlog';

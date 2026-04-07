@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import Link from 'next/link';
 import { CaretLeftIcon } from '@phosphor-icons/react/dist/ssr';
 import BlogArticleCard from '@/components/zGeneral/BlogArticleCard';

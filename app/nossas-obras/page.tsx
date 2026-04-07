@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { VenturesPageInfo } from '@/components/nossas-obras/types';
 import NossasObrasFinalCta from '../../components/nossas-obras/FinalCta';
 import NossasObrasHeadline from '../../components/nossas-obras/Headline';

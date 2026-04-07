@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { notFound } from 'next/navigation';
 import HomeContact from '@/components/home/HomeContact';
 import ProjectAmenitiesCta from '@/components/nossas-obras/detail/ProjectAmenitiesCta';
