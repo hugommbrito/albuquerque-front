@@ -70,7 +70,7 @@ export default function RootLayout({
 	return (
 		<html lang="pt-BR">
 			<body className={`antialiased ${helverticaLocal}`}>
-				{/* <IntroOverlay /> */}
+				<IntroOverlay />
 				<SiteHeader />
 				{/* <PageWrapper> */}
 				<main>{children}</main> {/* CONTEÚDO DA PÁGINA RENDERIZADO AQUI */}

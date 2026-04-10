@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
 
@@ -9,6 +10,7 @@ type Props = {
 };
 
 export default function IntroOverlay({ onDone }: Props) {
+	const pathname = usePathname();
 	const [mounted, setMounted] = useState(true);
 
 	const overlay = useAnimation();
@@ -104,7 +106,7 @@ export default function IntroOverlay({ onDone }: Props) {
 		};
 	}, [overlay, abqCenter, engenharia, abqBase, casal, bg, onDone]);
 
-	if (!mounted) return null;
+	if (!mounted || pathname !== '/home') return null;
 
 	return (
 		<motion.div

@@ -14,14 +14,14 @@ type IApiResponse = {
 	isSuccess: boolean | undefined;
 };
 
-// type VentureOption = {
-// 	id: string | number;
-// 	name: string;
-// };
+type VentureOption = {
+	id: string | number;
+	name: string;
+};
 
 type AssistenciaTecnicaFormProps = {
 	termsText: string;
-	ventures: string[];
+	ventures: VentureOption[];
 };
 
 export default function AssistenciaTecnicaForm({
@@ -204,8 +204,8 @@ export default function AssistenciaTecnicaForm({
 							>
 								<option value="">Selecione o empreendimento</option>
 								{ventures.map((v) => (
-									<option key={v} value={v}>
-										{v}
+									<option key={v.id} value={v.id}>
+										{v.name}
 									</option>
 								))}
 							</select>
