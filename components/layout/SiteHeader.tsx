@@ -25,9 +25,10 @@ const NAV_LINKS = [
 	{ label: 'Nossa história', href: '/nossa-historia' },
 	{ label: 'Seu sonho', href: '/seu-sonho' },
 	{ label: 'Blog', href: '/blog' },
+	{ label: 'Assistencia Tecnica', href: '/assistencia-tecnica' }
 ];
 
-const DARK_HEADER_PATH_PREFIXES = ['/nossas-obras', '/blog', '/nossa-historia'];
+const DARK_HEADER_PATH_PREFIXES = ['/nossas-obras', '/blog', '/nossa-historia', '/assistencia-tecnica'];
 
 const VARIANT_STYLES: Record<HeaderVariant, VariantStyles> = {
 	light: {

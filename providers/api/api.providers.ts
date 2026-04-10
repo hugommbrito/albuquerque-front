@@ -68,7 +68,18 @@ export class PageContentProvider {
 		return response;
 	}
 
+	static async getAssistenciaTecnicaPageInfo() {
+		const requestUrl = `/service-solicitation`;
 
+		const response = await apiController.get(requestUrl)
+			.then((res) => res)
+			.catch((err) => {
+				console.error('Error fetching assistencia tecnica page info:', err);
+				return err;
+			});
+
+		return response;
+	}
 
 }
 
@@ -79,7 +90,7 @@ export class sendEmailProvider {
 		message: string;
 	}) {
 		const requestUrl = `/send-email`;
-	
+
 		const response = await apiController.post(requestUrl, data)
 			.then((res) => res)
 			.catch((err) => {
@@ -89,5 +100,26 @@ export class sendEmailProvider {
 
 		return response;
 	}
-	
+
+	static async AssistenciaTecnicaRequest(data: {
+		venture: string;
+		unit: string;
+		name: string;
+		document: string;
+		phone: string;
+		email: string;
+		description: string;
+		acceptedTerms: boolean;
+	}) {
+		const requestUrl = `send-service-solicitation`;
+
+		const response = await apiController.post(requestUrl, data)
+			.then((res) => res)
+			.catch((err) => {
+				console.error('Error sending assistencia tecnica request:', err);
+				return err;
+			});
+
+		return response;
+	}
 }
