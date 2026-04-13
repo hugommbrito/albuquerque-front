@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 const LoadingAbq: React.FC<{className?: string}> = ({className}) => (

@@ -1,13 +1,18 @@
-export default function BlogHero() {
+type BlogHeroProps = {
+	desktopCoverImageUrl: string;
+	mobileCoverImageUrl: string;
+};
+
+export default function BlogHero({ desktopCoverImageUrl, mobileCoverImageUrl }: BlogHeroProps) {
 	return (
 		<section className="relative h-250 md:h-155 bg-primary -z-20">
 			<img
-				src="/blog/backDrop1.png"
+				src={desktopCoverImageUrl}
 				alt=""
 				className="absolute inset-0 h-full w-full object-cover -z-10 hidden md:block"
 			/>
 			<img
-				src="/blog/mobileBackDrop1.png"
+				src={mobileCoverImageUrl}
 				alt=""
 				className=" -z-10 md:hidden"
 			/>

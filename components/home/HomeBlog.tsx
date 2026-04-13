@@ -10,7 +10,7 @@ type HomeArea5Props = {
 
 
 
-export default function HomeArea5({homePageArticles, isLoading}: HomeArea5Props) {
+export default function HomeBlog({homePageArticles, isLoading}: HomeArea5Props) {
 	return (
 		<section className="py-20 px-4 md:px-15">
 			<div className="space-y-6">

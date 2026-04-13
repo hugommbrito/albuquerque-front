@@ -2,7 +2,7 @@
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
 
-export default function HomeArea1() {
+export default function HomeHero() {
 	return (
 		<div className="relative overflow-hidden h-230 md:h-auto">
 			<div className="absolute z-30 w-180 top-1/2 left-15 right-15 transform -translate-y-1/2 hidden md:block">

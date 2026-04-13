@@ -1,3 +1,5 @@
+'use client';
+
 import Page from '@/app/page';
 import { sendEmailProvider } from '@/providers/api/api.providers';
 import { FormEvent, useEffect, useState } from 'react';
@@ -13,7 +15,7 @@ type IApiResponse = {
 	isSuccess: boolean | undefined;
 };
 
-export default function HomeArea6() {
+export default function HomeContact() {
 	const [name, setName] = useState<string>('');
 	const [nameError, setNameError] = useState<IErrorStatus>({
 		message: null,
@@ -213,13 +215,25 @@ export default function HomeArea6() {
 							type="submit"
 							className="w-full bg-primary text-primary-invert rounded-full py-3 font-500 hover:bg-primary/90 transition disabled:bg-primary/50"
 							disabled={
+								isSending ||
 								!nameError.isValid ||
 								!phoneError.isValid ||
 								!messageError.isValid
 							}
 						>
-							Enviar
+							{isSending ? 'Enviando...' : 'Enviar'}
 						</button>
+						{apiResponseMessage.message && (
+							<p
+								className={`text-center text-14 font-500 py-2 rounded-full ${
+									apiResponseMessage.isSuccess
+										? 'text-green-600 bg-green-50'
+										: 'text-red-600 bg-red-50'
+								}`}
+							>
+								{apiResponseMessage.message}
+							</p>
+						)}
 					</form>
 				</div>
 			</div>

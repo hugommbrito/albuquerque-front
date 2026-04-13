@@ -1,13 +1,18 @@
-export default function NossaHistoriaHero() {
+type NossaHistoriaHeroProps = {
+	desktopCoverImageUrl: string;
+	mobileCoverImageUrl: string;
+};
+
+export default function NossaHistoriaHero({ desktopCoverImageUrl, mobileCoverImageUrl }: NossaHistoriaHeroProps) {
 	return (
 		<section className="relative md:h-195 md:px-15">
 			<img
-				src="/nossa-historia/backDrop1.png"
+				src={desktopCoverImageUrl}
 				alt="Família feliz em casa"
 				className="absolute inset-0 -z-10 w-full h-full object-cover hidden md:block"
 			/>
 			<img
-				src="/nossa-historia/mobileBackDrop1.png"
+				src={mobileCoverImageUrl}
 				alt="Família feliz em casa"
 				className="w-full h-full object-cover md:hidden"
 			/>

@@ -4,7 +4,12 @@ import { CaretRightIcon } from '@phosphor-icons/react';
 import ButtonLinkAbq from '../zGeneral/buttonLinkAbq';
 import { useMemo } from 'react';
 
-export default function SeuSonhoHero() {
+type SeuSonhoHeroProps = {
+	desktopCoverImageUrl: string;
+	mobileCoverImageUrl: string;
+};
+
+export default function SeuSonhoHero({ desktopCoverImageUrl, mobileCoverImageUrl }: SeuSonhoHeroProps) {
 	const finalWhatsAppUrl = useMemo(() => {
 		let whatsAppBaseUrl = 'https://wa.me/';
 		let message = 'Olá, gostaria de mais informações sobre o financiamento do meu sonho!';
@@ -52,12 +57,12 @@ export default function SeuSonhoHero() {
 				</form>
 			</div>
 			<img
-				src="/seu-sonho/backDrop1.png"
+				src={desktopCoverImageUrl}
 				alt="Casal celebrando nova casa"
 				className="absolute inset-0 z-10 h-full w-full object-cover hidden md:block"
 			/>
 			<img
-				src="/seu-sonho/mobileBackDrop-2.png"
+				src={mobileCoverImageUrl}
 				alt="Casal celebrando nova casa"
 				className="h-full w-full object-cover md:hidden"
 			/>
