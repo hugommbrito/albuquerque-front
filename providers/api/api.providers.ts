@@ -109,7 +109,7 @@ export class sendEmailProvider {
 		phone: string;
 		email: string;
 		description: string;
-		acceptedTerms: boolean;
+		accepted_terms: boolean;
 	}) {
 		const requestUrl = `send-service-solicitation`;
 

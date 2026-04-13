@@ -154,7 +154,7 @@ export default function AssistenciaTecnicaForm({
 				phone,
 				email,
 				description,
-				acceptedTerms,
+				accepted_terms: acceptedTerms,
 			});
 
 			setIsSending(false);
@@ -204,7 +204,7 @@ export default function AssistenciaTecnicaForm({
 							>
 								<option value="">Selecione o empreendimento</option>
 								{ventures.map((v) => (
-									<option key={v.id} value={v.id}>
+									<option key={v.id} value={v.name}>
 										{v.name}
 									</option>
 								))}
